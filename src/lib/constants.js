@@ -1,11 +1,12 @@
+
 import {
   GithubIcon,
   LinkedinIcon,
   InstagramIcon,
-  SparklesIcon,
-  NavigationIcon,
-  Wand2Icon,
-  FolderOpenDot
+  FolderOpenDot,
+  Rocket,
+  Layers,
+  UserPlus
 } from 'lucide-react'
 
 export const PROFILES = {
@@ -89,12 +90,12 @@ export const LINKS = [
   {
     href: '/',
     label: 'Welcome',
-    icon: <SparklesIcon size={16} />
+    icon: <UserPlus size={16} />
   },
   {
-    href: '/journey',
+    href: '/cv',
     label: 'Curriculum vitae',
-    icon: <NavigationIcon size={16} />
+    icon: <Rocket size={16} />
   },
   {
     href: '/projects',
@@ -103,8 +104,8 @@ export const LINKS = [
   },
   {
     href: '/stack',
-    label: 'Stack',
-    icon: <Wand2Icon size={16} />
+    label: 'Tech Stack',
+    icon: <Layers size={16} />
   }
 ]
 

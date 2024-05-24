@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 
 const keyCodePathnameMapping = {
   Digit1: '/',
-  Digit2: '/journey',
+  Digit2: '/cv',
   Digit3: '/projects',
   Digit4: '/stack'
 }
