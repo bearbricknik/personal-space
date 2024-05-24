@@ -36,7 +36,7 @@ const cvhistory = [
         description: 'During the pandamic I got bored and started to look deeper into coding. I started to build my own software which was a browser extensions in plain JavaScript, HTML & CSS. I built that software together with my team. All of us had the same goal, to make the software as good as possible and to reduce our costs and get more limited items. NexosSolution was born.',
         href: 'https://nexossolutions.com/',
         image: {
-          url: '/assets/nexossolutions.png',
+          url: '/assets/nexosios.jpeg',
           width: 600,
           height: 600,
           title: 'NexosSolutions Logo',
@@ -59,6 +59,10 @@ const cvhistory = [
           title: 'NexosProxies Logo',
           description: 'NexosProxies Logo'
         }
+      },
+      {
+        title: 'Bachelor of Science in Automotive & Engine Technology',
+        description: 'There it is. I finally graduated from the University of Stuttgart with a Bachelor of Science in Automotive & Engine Technology. I learned a lot about the automotive sector and how to develop cars.',
       },
       {
         title: 'Started my journey with coding',

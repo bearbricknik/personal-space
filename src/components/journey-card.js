@@ -1,10 +1,10 @@
-import { Gauge } from 'lucide-react'
+import { Gauge, Code } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 const MarkdownRenderer = dynamic(() => import('@/components/markdown-renderer').then((mod) => mod.MarkdownRenderer))
 
-export const JourneyCard = ({ title, description, image, index, href, experienceLevel }) => (
+export const JourneyCard = ({ title, description, image, index, href, experienceLevel, technologies }) => (
   <div className="word-break-word flex flex-col">
     <span className="font-semibold tracking-tight">{title}</span>
     {description && <MarkdownRenderer className="text-sm">{description}</MarkdownRenderer>}
@@ -12,6 +12,12 @@ export const JourneyCard = ({ title, description, image, index, href, experience
       <div className="flex items-center text-sm">
         <Gauge size={14} />
         <span className="ml-1 font-medium">{experienceLevel}</span>
+      </div>
+    )}
+    {technologies && technologies.length > 0 && (
+      <div className="mt-1 flex items-center text-sm">
+        <Code className='text-blue-500' size={14} />
+        <span className="ml-1 font-bold">Technologies: {technologies.join(', ')}</span>
       </div>
     )}
     {image?.url && (

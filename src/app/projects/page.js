@@ -2,28 +2,53 @@ import { ScrollArea } from '@/components/scroll-area'
 import { FloatingHeader } from '@/components/floating-header'
 import { PageTitle } from '@/components/page-title'
 import { GradientBg3 } from '@/components/gradient-bg'
-import { PlusIcon } from 'lucide-react'
 import { JourneyCard } from '@/components/journey-card'
+import { ChevronRight } from 'lucide-react'
 
-
-const projects = [
-  // {
-  //   year: '2021',
-  //   logs: [
-  //     {
-  //       title: 'Started my journey with coding',
-  //       description:
-  //         'I started my journey with creating browser extensions in plain JavaScript with the great help of my team as I struggled with HTML and CSS at that time.',
-  //       image: {
-  //         url: 'https://avatars.githubusercontent.com/u/91036480?s=200&v=4',
-  //         width: 200,
-  //         height: 200,
-  //         title: 'Dominik',
-  //         description: 'Dominik'
-  //       }
-  //     }
-  //   ]
-  // }
+export const projects = [
+  {
+    logs: [
+      {
+        title: 'ProfitPath - A Sourcing Software',
+        description: 'A software that helps Amazon sellers to find new profitable items for their online shops. The software is built with React, NextJS and NodeJS. We analyze product feed data from hundreds of suppliers around the world and calculate profit, roi, margin and other important metrics for the sellers. We add value to the sellers by providing them with a faster solution than manual product sourcing.',
+        href: 'https://profitpath.app/en',
+        technologies: ['React', 'NextJS', 'Golang', 'SQL', 'PostgreSQL', 'Typescript', 'TailwindCSS', 'ReactQuery', 'TRPC'],
+        image: {
+          url: '/assets/seo_image.png',
+          width: 600,
+          height: 600,
+          title: 'ProfitPath Logo',
+          description: 'ProfitPath Logo'
+        }
+      }
+    ]
+  },
+  {
+    logs: [
+      {
+        title: 'NexosSolutions - A Browser Extension & App to automate the purchase process',
+        description: 'A browser extension for desktop, iOS & android and on top a mobile app that automates the process of purchasing limited items. Based on web-requests it automated the process of selecting, purchasing, submitting information & checking out the items. Due to the nature of the products (limited items) the software was built to be as fast as possible to get as many items as possible.',
+        href: 'https://nexossolutions.com/',
+        technologies: ['React Native', 'NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'Webpack', 'MongoDB'],
+        image: {
+          url: '/assets/nexosios.jpeg',
+          width: 600,
+          height: 600,
+          title: 'NexosProxies Logo',
+          description: 'NexosProxies Logo'
+        }
+      }
+    ]
+  },
+  {
+    logs: [
+      {
+        title: 'Branchenbuch Scraper - A Business Directory',
+        description: 'A custom scraper that scrapes business directories, contact information and more. The scraper is built with Python and is used to contact businesses to take part in a study.',
+        technologies: ['Python', 'Threading', 'Pandas', 'Requests', 'BeautifulSoup'],
+      }
+    ]
+  }
 ]
 
 export default async function Home() {
@@ -39,14 +64,9 @@ export default async function Home() {
             All of them are linked down below. Do not hesitate to contact me if you have any questions or feedback or if
             you are <span className="font-medium">interested in one of the products</span>.
           </p>
-          <p>Coming soon...</p>
-          <div className="flex flex-col items-stretch gap-12">
+          <div className="flex flex-col items-stretch gap-6">
             {projects.map((item, itemIndex) => (
-              <div key={`data_${itemIndex}`} className="flex flex-col items-baseline gap-6 md:flex-row md:gap-12">
-                <div className="flex items-center">
-                  <h2>{item.year}</h2>
-                  <hr className="my-0 ml-4 flex-1 border-dashed border-gray-200" />
-                </div>
+              <div key={`data_${itemIndex}`} className="flex flex-col items-baseline gap-4">
                 <section>
                   {item.logs.map((log, logIndex) => (
                     <div key={`data_${itemIndex}_log_${logIndex}`} className="relative flex pb-8 last:pb-0">
@@ -55,11 +75,11 @@ export default async function Home() {
                           <div className="pointer-events-none h-full w-px border-l border-gray-200"></div>
                         </div>
                       )}
-                      <div className="z-0 flex size-6 shrink-0 items-center justify-center rounded-full bg-black align-middle text-white">
-                        <PlusIcon size={16} />
+                      <div className="z-0 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue-500 align-middle text-white">
+                        <ChevronRight size={16} />
                       </div>
-                      <div className="grow pl-8">
-                        <JourneyCard {...log} index={logIndex} />
+                      <div className="grow pl-6">
+                        <JourneyCard {...log} index={logIndex} href={log.href} />
                       </div>
                     </div>
                   ))}
