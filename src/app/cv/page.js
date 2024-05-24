@@ -11,7 +11,7 @@ const cvhistory = [
     year: '2023',
     logs: [
       {
-        title: 'UI / UX Developer for ProfitPath',
+        title: 'UI / UX Developer at ProfitPath',
         description: 'Since the start of the company, we have been working on the software ProfitPath. A tool for amazon sellers to find new profitable items for their online shops.',
         href: 'https://profitpath.app/en',
         image: {
