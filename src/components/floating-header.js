@@ -5,27 +5,17 @@ import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Balancer from 'react-wrap-balancer'
-import { ArrowLeftIcon, RadioIcon } from 'lucide-react'
+import { ArrowLeftIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button.jsx'
-import { LoadingSpinner } from '@/components/loading-spinner'
 const MobileDrawer = dynamic(() => import('@/components/mobile-drawer').then((mod) => mod.MobileDrawer))
-const SubmitBookmarkDrawer = dynamic(
-  () => import('@/components/submit-bookmark/drawer').then((mod) => mod.SubmitBookmarkDrawer),
-  {
-    loading: () => <LoadingSpinner />,
-    ssr: false
-  }
-)
+
 import { SCROLL_AREA_ID, MOBILE_SCROLL_THRESHOLD } from '@/lib/constants'
 
-export const FloatingHeader = memo(({ scrollTitle, title, goBackLink, bookmarks, currentBookmark, children }) => {
+export const FloatingHeader = memo(({ scrollTitle, title, goBackLink, children }) => {
   const [transformValues, setTransformValues] = useState({ translateY: 0, opacity: scrollTitle ? 0 : 1 })
   const pathname = usePathname()
-  const isWritingIndexPage = pathname === '/writing'
   const isWritingPath = pathname.startsWith('/writing')
-  const isBookmarksIndexPage = pathname === '/bookmarks'
-  const isBookmarkPath = pathname.startsWith('/bookmarks')
 
   useEffect(() => {
     const scrollAreaElem = document.querySelector(`#${SCROLL_AREA_ID}`)
@@ -84,22 +74,6 @@ export const FloatingHeader = memo(({ scrollTitle, title, goBackLink, bookmarks,
                   <span className="line-clamp-2 font-semibold tracking-tight">{title}</span>
                 </Balancer>
               )}
-              <div className="flex items-center gap-2">
-                {(isWritingIndexPage || isBookmarksIndexPage) && (
-                  <Button variant="outline" size="xs" asChild>
-                    <a
-                      href={isWritingIndexPage ? '/writing.xml' : '/bookmarks.xml'}
-                      title="RSS feed"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <RadioIcon size={16} className="mr-2" />
-                      RSS feed
-                    </a>
-                  </Button>
-                )}
-                {isBookmarkPath && <SubmitBookmarkDrawer bookmarks={bookmarks} currentBookmark={currentBookmark} />}
-              </div>
             </div>
           </div>
           {/* This is a hack to show writing views with framer motion reveal effect */}

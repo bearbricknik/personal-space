@@ -1,7 +1,7 @@
 export const sharedMetadata = {
-  title: 'Onur Şuyalçınkaya',
+  title: 'Dominik Huber',
   description: 'Software Engineer, DJ, writer, and minimalist, based in Amsterdam, The Netherlands',
-  url: 'https://onur.dev',
+  url: 'https://huberdominik.com',
   ogImage: {
     width: 1200,
     height: 630,

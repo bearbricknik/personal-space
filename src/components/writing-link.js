@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 
-import { cn, getDateTimeFormat, viewCountFormatter } from '@/lib/utils'
+import { cn, getDateTimeFormat } from '@/lib/utils'
 
-export const WritingLink = ({ post, viewCount, isMobile, isActive }) => {
+export const WritingLink = ({ post, isMobile, isActive }) => {
   const date = post.date || post.sys.firstPublishedAt
   const formattedDate = getDateTimeFormat(date)
-  const formattedViewCount = viewCount ? viewCountFormatter.format(viewCount) : null
+  const formattedViewCount = null
 
   return (
     <LazyMotion features={domAnimation}>

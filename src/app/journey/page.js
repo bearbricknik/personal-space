@@ -29,11 +29,12 @@ export default async function Journey() {
   return (
     <ScrollArea useScrollAreaId>
       <GradientBg3 />
-      <FloatingHeader scrollTitle="Journey" />
+      <FloatingHeader scrollTitle="Curriculum vitae" />
       <div className="content-wrapper">
         <div className="content">
-          <PageTitle title="Journey" />
-          <Suspense fallback={<ScreenLoadingSpinner />}>
+          <PageTitle title="Curriculum vitae" />
+          <p>Coming soon...</p>
+          {/* <Suspense fallback={<ScreenLoadingSpinner />}>
             <div className="flex flex-col items-stretch gap-12">
               {allLogbook.map((item, itemIndex) => (
                 <div key={`data_${itemIndex}`} className="flex flex-col items-baseline gap-6 md:flex-row md:gap-12">
@@ -61,7 +62,7 @@ export default async function Journey() {
                 </div>
               ))}
             </div>
-          </Suspense>
+          </Suspense> */}
         </div>
       </div>
     </ScrollArea>

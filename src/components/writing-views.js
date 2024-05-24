@@ -2,12 +2,10 @@
 
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 
-import { useViewData } from '@/hooks/useViewData'
 import { viewCountFormatter } from '@/lib/utils'
 
 export const WritingViews = ({ slug }) => {
-  const viewData = useViewData(slug)
-  const { view_count } = viewData?.[0] ?? {}
+  const { view_count } = {}
   if (!view_count) return <m.span key={`${slug}-views-loading`} />
   const formattedViewCount = viewCountFormatter.format(view_count)
 

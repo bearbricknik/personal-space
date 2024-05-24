@@ -3,11 +3,9 @@
 import Link from 'next/link'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 
-import { useViewData } from '@/hooks/useViewData'
-import { cn, dateWithDayAndMonthFormatter, dateWithMonthAndYearFormatter, viewCountFormatter } from '@/lib/utils'
+import { cn, dateWithDayAndMonthFormatter, dateWithMonthAndYearFormatter } from '@/lib/utils'
 
 export const WritingList = ({ items }) => {
-  const viewData = useViewData()
 
   return (
     <LazyMotion features={domAnimation}>
@@ -40,8 +38,6 @@ export const WritingList = ({ items }) => {
                   const dateWithDayAndMonth = dateWithDayAndMonthFormatter.format(dateObj)
                   const dateWithMonthAndYear = dateWithMonthAndYearFormatter.format(dateObj)
 
-                  const { view_count } = viewData?.find((item) => item.slug === slug) ?? {}
-                  const formattedViewCount = view_count ? viewCountFormatter.format(view_count) : null
 
                   return (
                     <li
@@ -71,21 +67,7 @@ export const WritingList = ({ items }) => {
                           </span>
                           <span className="col-span-2 line-clamp-4 md:col-span-6">{title}</span>
                           <span className="col-span-1">
-                            {formattedViewCount ? (
-                              <m.span
-                                key={`${slug}-views`}
-                                className="flex justify-end tabular-nums"
-                                title={`${formattedViewCount} views`}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                              >
-                                {formattedViewCount}
-                              </m.span>
-                            ) : (
-                              <m.span key={`${slug}-views-loading`} />
-                            )}
+                            <m.span key={`${slug}-views-loading`} />
                           </span>
                         </span>
                       </Link>
