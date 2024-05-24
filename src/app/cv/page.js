@@ -11,7 +11,7 @@ const cvhistory = [
     year: '2023',
     logs: [
       {
-        title: 'ProfitPath',
+        title: 'UI / UX Developer for ProfitPath',
         description: 'Since the start of the company, we have been working on the software ProfitPath. A tool for amazon sellers to find new profitable items for their online shops.',
         href: 'https://profitpath.app/en',
         image: {
@@ -24,7 +24,7 @@ const cvhistory = [
       },
       {
         title: 'FourByte GmbH',
-        description: 'Marten Enders, Luca Jurende, Leon Bendzko and I founded a company called FourByte GmbH. We are a company that specializes in software development.',
+        description: 'Marten Enders, Luca Jurende, Leon Bendzko and I founded a company called FourByte GmbH. We are a company that specializes in software development. Under this company we developed the software ProfitPath. We are a team of four people who are passionate about software development & building products for businesses. We are always looking for new challenges and opportunities to grow.',
       }
     ]
   },
