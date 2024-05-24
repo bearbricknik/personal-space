@@ -6,7 +6,6 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { cn, dateWithDayAndMonthFormatter, dateWithMonthAndYearFormatter } from '@/lib/utils'
 
 export const WritingList = ({ items }) => {
-
   return (
     <LazyMotion features={domAnimation}>
       <div className="text-sm">
@@ -37,7 +36,6 @@ export const WritingList = ({ items }) => {
                   const dateObj = new Date(date || firstPublishedAt)
                   const dateWithDayAndMonth = dateWithDayAndMonthFormatter.format(dateObj)
                   const dateWithMonthAndYear = dateWithMonthAndYearFormatter.format(dateObj)
-
 
                   return (
                     <li

@@ -9,7 +9,7 @@ export const MenuContent = () => (
     <div className="flex flex-col gap-4">
       <Link href="/" className="inline-flex items-center gap-2 rounded-lg p-2 ring-1 ring-gray-300 hover:bg-gray-200">
         <img
-          src="/assets/me.avif"
+          src="https://media.licdn.com/dms/image/D5603AQFv8b8SC28ZxQ/profile-displayphoto-shrink_400_400/0/1715925605268?e=1721865600&v=beta&t=PYK2h16ZfDAfDoRATd9GnCS1w_To0j5xf9OtolMLlcU"
           alt="Dominik Huber"
           width={40}
           height={40}
@@ -45,12 +45,12 @@ export const MenuContent = () => (
       </div>
     </div>
     <hr />
-    <div className='flex flex-col gap-2'>
+    <div className="flex flex-col gap-2">
       <span className="text-xs font-medium leading-relaxed text-gray-600">Get in contact with me</span>
       <div className="inline-flex items-center gap-2 rounded-lg p-2 ring-1 ring-gray-300">
         <Link href="https://www.linkedin.com/in/dominik-huber-7a4394227/" className="flex flex-col">
           <span className="flex flex-row items-center gap-1 font-semibold tracking-tight">
-            <Link2 className='text-blue-500' size={16} />
+            <Link2 className="text-blue-500" size={16} />
             Want to connect?
           </span>
           <span className="text-gray-600">Contact me on LinkedIn to exchange in the future.</span>

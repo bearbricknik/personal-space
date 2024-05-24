@@ -19,7 +19,6 @@ export default async function RootLayout({ children }) {
               <MenuContent />
             </SideMenu>
             <div className="flex flex-1">
-              {/* add header bar */}
               {children}
             </div>
           </div>
@@ -40,7 +39,7 @@ export const metadata = {
     template: `%s — ${sharedMetadata.title}`
   },
   description: sharedMetadata.description,
-  keywords: ['Dominik Huber', 'Onur Suyalcinkaya', 'onur dev', 'onur.dev'],
+  keywords: ['Dominik Huber', 'Dominik Huber', 'huberdominik.com'],
   openGraph: {
     title: {
       default: sharedMetadata.title,

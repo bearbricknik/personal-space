@@ -7,25 +7,28 @@ import { FloatingHeader } from '@/components/floating-header'
 import { ScreenLoadingSpinner } from '@/components/screen-loading-spinner'
 import { PageTitle } from '@/components/page-title'
 import { GradientBg3 } from '@/components/gradient-bg'
-import { getAllLogbook, getPageSeo } from '@/lib/contentful'
 
-async function fetchData() {
-  const allLogbook = await getAllLogbook()
-
-  const mappedLogbook = []
-  allLogbook.map((log) => {
-    const year = new Date(log.date).getFullYear()
-    const existingYear = mappedLogbook.find((item) => item?.year === year)
-    if (!existingYear) mappedLogbook.push({ year, logs: [log] })
-    else existingYear.logs.push(log)
-  })
-
-  return { allLogbook: mappedLogbook }
-}
+const logbook = [
+  // {
+  //   year: '2021',
+  //   logs: [
+  //     {
+  //       title: 'Started my journey with coding',
+  //       description:
+  //         'I started my journey with creating browser extensions in plain JavaScript with the great help of my team as I struggled with HTML and CSS at that time.',
+  //       image: {
+  //         url: 'https://avatars.githubusercontent.com/u/91036480?s=200&v=4',
+  //         width: 200,
+  //         height: 200,
+  //         title: 'Dominik',
+  //         description: 'Dominik'
+  //       }
+  //     }
+  //   ]
+  // }
+]
 
 export default async function Journey() {
-  const { allLogbook } = await fetchData()
-
   return (
     <ScrollArea useScrollAreaId>
       <GradientBg3 />
@@ -33,10 +36,11 @@ export default async function Journey() {
       <div className="content-wrapper">
         <div className="content">
           <PageTitle title="Curriculum vitae" />
+          <p>Lets start at the very beginning and where I am now.</p>
           <p>Coming soon...</p>
-          {/* <Suspense fallback={<ScreenLoadingSpinner />}>
+          <Suspense fallback={<ScreenLoadingSpinner />}>
             <div className="flex flex-col items-stretch gap-12">
-              {allLogbook.map((item, itemIndex) => (
+              {logbook.map((item, itemIndex) => (
                 <div key={`data_${itemIndex}`} className="flex flex-col items-baseline gap-6 md:flex-row md:gap-12">
                   <div className="flex items-center">
                     <h2>{item.year}</h2>
@@ -62,32 +66,9 @@ export default async function Journey() {
                 </div>
               ))}
             </div>
-          </Suspense> */}
+          </Suspense>
         </div>
       </div>
     </ScrollArea>
   )
-}
-
-export async function generateMetadata() {
-  const seoData = await getPageSeo('journey')
-  if (!seoData) return null
-
-  const {
-    seo: { title, description }
-  } = seoData
-  const siteUrl = '/journey'
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url: siteUrl
-    },
-    alternates: {
-      canonical: siteUrl
-    }
-  }
 }

@@ -11,7 +11,7 @@ import {
 export const PROFILES = {
   twitter: {
     title: 'X (Twitter)',
-    username: 'onurschu',
+    username: 'bearbricknik',
     url: 'https://x.com/bearbricknik',
     icon: (
       <svg
@@ -92,16 +92,3 @@ export const LINKS = [
 
 export const SCROLL_AREA_ID = 'scroll-area'
 export const MOBILE_SCROLL_THRESHOLD = 20
-export const SUPABASE_TABLE_NAME = 'pages'
-
-export const SUBMIT_BOOKMARK_FORM_TITLE = 'Submit a bookmark'
-export const SUBMIT_BOOKMARK_FORM_DESCRIPTION =
-  "Send me a website you like and if I like it too, you'll see it in the bookmarks list. With respect, please do not submit more than 5 websites a day."
-export const MAX_BOOKMARK_SUBMISSIONS_PER_DAY = 5
-export const BOOKMARK_SUBMISSION_COUNT_COOKIE_NAME = 'formSubmissionCount'
-
-export const CONTENT_TYPES = {
-  PAGE: 'page',
-  POST: 'post',
-  LOGBOOK: 'logbook'
-}

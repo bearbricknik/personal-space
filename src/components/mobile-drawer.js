@@ -1,4 +1,3 @@
-
 import { MenuContent } from '@/components/menu-content'
 import { Button } from '@/components/ui/button'
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
@@ -8,7 +7,7 @@ export function MobileDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className='flex gap-1 rounded-lg bg-gray-100'>
+        <div className="flex gap-1 rounded-lg bg-gray-100">
           <Button variant="ghost" title="Toggle menu">
             <PanelRightClose size={18} />
           </Button>
