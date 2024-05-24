@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { NavigationLink } from '@/components/navigation-link'
-import { PROFILES, LINKS } from '@/lib/constants'
+import { PROFILES, LATESTPROJECTS, LINKS } from '@/lib/constants'
 import { Link2 } from 'lucide-react'
 
 export const MenuContent = () => (
@@ -32,6 +32,15 @@ export const MenuContent = () => (
             icon={link.icon}
             shortcutNumber={linkIndex + 1}
           />
+        ))}
+      </div>
+    </div>
+    <hr />
+    <div className="flex flex-col gap-2 text-sm">
+      <span className="px-2 text-xs font-medium leading-relaxed text-gray-600">Latest & Ongoing Projects</span>
+      <div className="flex flex-col gap-1">
+        {Object.values(LATESTPROJECTS).map((project) => (
+          <NavigationLink key={project.url} href={project.url} label={project.title} icon={project.icon} />
         ))}
       </div>
     </div>

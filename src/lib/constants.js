@@ -49,6 +49,24 @@ export const PROFILES = {
   }
 }
 
+export const LATESTPROJECTS = {
+  profitpath: {
+    title: 'ProfitPath',
+    url: 'https://profitpath.app',
+    icon: <FolderOpenDot size={16} />
+  },
+  nexosSolutions: {
+    title: 'Nexos Solutions',
+    url: 'https://nexossolutions.com/',
+    icon: <FolderOpenDot size={16} />
+  },
+  nexosProxies: {
+    title: 'Nexos Proxies',
+    url: 'https://nexosproxies.com/',
+    icon: <FolderOpenDot size={16} />
+  },
+}
+
 export const TWEETS_COLLECTION_ID = 15896982
 
 export const COLLECTION_IDS = [
