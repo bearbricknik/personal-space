@@ -92,6 +92,15 @@ const cvhistory = [
     ]
   },
   {
+    year: '2018',
+    logs: [
+      {
+        title: 'Basic technical internship at Hidria Bausch GmbH',
+        description: 'At Hidria Bausch I learned the basic manufacturing processes such as welding, turning, milling and grinding. I also learned how to work with different materials such as steel, aluminum and alloys.',
+      }
+    ]
+  },
+  {
     year: '2017',
     logs: [
       {
@@ -108,8 +117,21 @@ const cvhistory = [
     year: '2016',
     logs: [
       {
+        title: 'First Internship at WIELAND WERKE AG',
+        description: 'After school I started to look for internships to get a feeling for the automotive sector. I did my first internship at WIELAND WERKE AG. Wieland Werke AG is a German company that produces semi-finished products made of copper and copper alloys for the automtive sector. I was always interested to work as a mechanical engineer no matter if it was in the automotive sector or at a supplier to help develop new products.',
+      },
+      {
         title: 'Graduated from High School',
         description: 'I graduated from the local high school in my hometown with the Abitur. I started to look out for opportunities to study.',
+      }
+    ]
+  },
+  {
+    year: '2014',
+    logs: [
+      {
+        title: 'Student Internship in Highschool at Reisacher GmbH',
+        description: 'During school I was able to do an internship at Reisacher GmbH. I learned a lot about the automotive sector and how to work in a team.',
       }
     ]
   },

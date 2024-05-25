@@ -7,14 +7,12 @@ export function MobileDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className="flex gap-1 rounded-lg bg-gray-100">
-          <Button variant="ghost" title="Toggle menu">
+        <div className="flex rounded-lg bg-gray-100">
+          <Button variant="ghost" size={"icon"} title="Toggle menu">
             <PanelRightClose size={18} />
           </Button>
           <Button className="gap-1" variant="ghost">
             <span>Dominik Huber</span>
-            <span>|</span>
-            <span>Portfolio</span>
           </Button>
         </div>
       </DrawerTrigger>

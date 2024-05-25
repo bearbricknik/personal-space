@@ -60,9 +60,9 @@ export const MenuContent = () => (
         <Link href="https://www.linkedin.com/in/dominik-huber-7a4394227/" className="flex flex-col">
           <span className="flex flex-row items-center gap-1 font-semibold tracking-tight">
             <Link2 className="text-blue-500" size={16} />
-            Want to connect?
+            Lets connect!
           </span>
-          <span className="text-gray-600">Contact me on LinkedIn to exchange in the future.</span>
+          <span className="text-gray-600">Contact me on LinkedIn to exchange on future projects.</span>
         </Link>
       </div>
     </div>
