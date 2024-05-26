@@ -37,7 +37,7 @@ const stacks = [
         }
       },
       {
-        title: 'React Native Mobile Framework',
+        title: 'React Native Mobile Framework & Expo',
         description: 'A framework for building native applications using React. In the past we built the NexosSolutions App for Android and iOS with React Native.',
         href: 'https://reactnative.dev/',
         experienceLevel: 'Intermediate',

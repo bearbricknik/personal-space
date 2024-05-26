@@ -29,13 +29,13 @@ export const projects = [
         title: 'NexosSolutions - A Browser Extension & App to automate the purchase process',
         description: 'A browser extension for desktop, iOS & android and on top a mobile app that automates the process of purchasing limited items. Based on web-requests it automated the process of selecting, purchasing, submitting information & checking out the items. Due to the nature of the products (limited items) the software was built to be as fast as possible to get as many items as possible.',
         href: 'https://nexossolutions.com/',
-        technologies: ['React Native', 'NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'Webpack', 'MongoDB'],
+        technologies: ['React Native', 'Expo', 'NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'Webpack', 'MongoDB'],
         image: {
           url: '/assets/nexosios.jpeg',
           width: 600,
           height: 600,
-          title: 'NexosProxies Logo',
-          description: 'NexosProxies Logo'
+          title: 'NexosSolutions Logo',
+          description: 'NexosSolutions Logo'
         }
       }
     ]
@@ -48,7 +48,24 @@ export const projects = [
         technologies: ['Python', 'Threading', 'Pandas', 'Requests', 'BeautifulSoup'],
       }
     ]
-  }
+  },
+  {
+    logs: [
+      {
+        title: 'NexosProxies - A Proxy Network',
+        description: 'A proxy network that provides residential, datacenter and ISP proxies for businesses. The network can be accessed via an API to generate IP:PORT:USER:PASS proxies in 100 different countries.',
+        href: 'https://nexosproxies.com/',
+        technologies: ['NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'MongoDB', 'Squid'],
+        image: {
+          url: '/assets/nexosproxies.png',
+          width: 600,
+          height: 600,
+          title: 'NexosProxies Logo',
+          description: 'NexosProxies Logo'
+        }
+      }
+    ]
+  },
 ]
 
 export default async function Home() {
