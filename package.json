@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "prettier": "prettier --write \"**/*.{html,js,jsx,json,md,mdx,mjs}\"",
     "clear-cache": "rm -rf .next",
@@ -38,6 +38,7 @@
     "markdown-to-jsx": "^7.3.2",
     "million": "^3.0.6",
     "next": "^14.2.1",
+    "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.0",
