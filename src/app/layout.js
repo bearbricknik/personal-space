@@ -50,7 +50,7 @@ export const metadata = {
     type: 'website',
     url: 'https://huberdominik.com',
     siteName: sharedMetadata.title,
-    locale: 'en_IE'
+    locale: 'de_DE',
   },
   alternates: {
     canonical: '/'
