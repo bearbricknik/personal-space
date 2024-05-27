@@ -15,7 +15,7 @@ export const JourneyCard = ({ title, description, image, index, href, experience
       </div>
     )}
     {technologies && technologies.length > 0 && (
-      <div className="mt-1 flex text-sm sm:flex-col sm:items-start md:flex-row md:items-center">
+      <div className="mt-1 flex flex-col text-sm sm:items-start md:flex-row md:items-center">
         <div className='flex flex-row items-center gap-1'>
           <Code2 className='text-blue-500' size={14} />
           <span>Technologies:</span>
