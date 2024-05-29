@@ -1,4 +1,5 @@
-import { Gauge, Code2 } from 'lucide-react'
+
+import { CircleGauge, Code2 } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -10,7 +11,7 @@ export const JourneyCard = ({ title, description, image, index, href, experience
     {description && <MarkdownRenderer className="text-sm">{description}</MarkdownRenderer>}
     {experienceLevel && (
       <div className="flex items-center text-sm">
-        <Gauge size={14} />
+        <CircleGauge size={14} />
         <span className="ml-1 font-medium">{experienceLevel}</span>
       </div>
     )}
@@ -26,7 +27,7 @@ export const JourneyCard = ({ title, description, image, index, href, experience
     {image?.url && (
       <div className={`mt-2.5 overflow-hidden rounded-xl bg-white ${href && 'cursor-pointer'}`}>
         {href ? (
-          <Link href={href}>
+          <Link href={href} target='_blank'>
             <img
               src={image.url}
               alt={image.title || image.description}

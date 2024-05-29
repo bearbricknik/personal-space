@@ -57,7 +57,7 @@ export const MenuContent = () => (
     <div className="flex flex-col gap-2">
       <span className="text-xs font-medium leading-relaxed text-gray-600">Get in contact with me</span>
       <div className="inline-flex items-center gap-2 rounded-lg p-2 ring-1 ring-gray-300">
-        <Link href="https://www.linkedin.com/in/dominik-huber-7a4394227/" className="flex flex-col">
+        <Link href="https://www.linkedin.com/in/dominik-huber-7a4394227/" target='_blank' className="flex flex-col">
           <span className="flex flex-row items-center gap-1 font-semibold tracking-tight">
             <Link2 className="text-blue-500" size={16} />
             Lets connect!
