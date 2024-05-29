@@ -141,7 +141,7 @@ export const cvhistory = [
         year: '1997',
         logs: [
             {
-                title: 'PNPM install -g dominik',
+                title: 'pnpm install -g dominik',
                 description: 'I was born in a small town in Germany on the 14th of October 1997.',
             }
         ]
