@@ -59,15 +59,19 @@ export const FloatingHeader = memo(({ scrollTitle, title, goBackLink, children }
             )}
             <div className="flex flex-1 items-center justify-between">
               {scrollTitle && (
-                <span
-                  className="line-clamp-2 font-semibold tracking-tight"
-                  style={{
-                    transform: `translateY(${transformValues.translateY}%)`,
-                    opacity: transformValues.opacity
-                  }}
-                >
-                  {scrollTitle}
-                </span>
+
+                <div className="flex rounded-lg bg-gray-100" style={{
+                  transform: `translateY(${transformValues.translateY}%)`,
+                  opacity: transformValues.opacity
+                }}>
+                  <div className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-colors duration-300 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50">
+                    <span
+                      className="line-clamp-2 font-semibold tracking-tight"
+                    >
+                      {scrollTitle}
+                    </span>
+                  </div>
+                </div>
               )}
               {title && (
                 <Balancer ratio={0.35}>
