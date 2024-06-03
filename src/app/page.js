@@ -36,7 +36,7 @@ export default async function Home() {
           <PageTitle title="Welcome to my Portfolio" />
           <p>
             Hi 👋 I'm Dominik, a previous automative & engine student at the University of Stuttgart, Germany. During
-            the pandamic I teached myself how to write code and since then I am in various software projects.
+            the pandemic I teached myself how to write code and since then I am in various software projects.
           </p>
           <p>
             I started my journey with creating browser extensions in plain JavaScript with the great help of my team as
