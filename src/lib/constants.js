@@ -63,7 +63,7 @@ export const LATESTPROJECTS = {
   },
   nexosProxies: {
     title: 'Nexos Proxies',
-    url: 'https://nexosproxies.com/',
+    url: '',
     icon: <FolderOpenDot size={16} />
   },
 }

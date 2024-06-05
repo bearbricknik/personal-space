@@ -48,7 +48,6 @@ export const projects = [
             {
                 title: 'NexosProxies - A Proxy Network',
                 description: 'A proxy network that provides residential, datacenter and ISP proxies for businesses. The network can be accessed via an API to generate IP:PORT:USER:PASS proxies in 100 different countries.',
-                href: 'https://nexosproxies.com/',
                 technologies: ['NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'MongoDB', 'Squid'],
                 image: {
                     url: '/assets/nexosproxies.png',

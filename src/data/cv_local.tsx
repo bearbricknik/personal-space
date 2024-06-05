@@ -44,7 +44,6 @@ export const cvhistory = [
             {
                 title: 'NexosProxies - A Service for Proxy Networks',
                 description: 'I started to reduce my costs and that got me interested in creating my own IP proxy network. I started to look into proxy services and how they work. I learned a lot about networking and how to set up a proxy server. I then started to sell my own proxies to other people who were in the same situation as me. NexosProxies was born.',
-                href: 'https://nexosproxies.com/',
                 image: {
                     url: '/assets/nexosproxies.png',
                     width: 600,
