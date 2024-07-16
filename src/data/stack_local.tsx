@@ -57,7 +57,7 @@ export const stacks = [
             {
                 title: 'Golang Language',
                 description: 'Extremely fast and efficient language. In some projects we used Golang for the backend to deliver the data to the frontend and to handle the API requests.',
-                href: 'https://www.python.org/',
+                href: 'https://go.dev/',
                 experienceLevel: 'Basic',
             }
         ]
@@ -69,7 +69,7 @@ export const stacks = [
             {
                 title: 'Typescript Language',
                 description: 'Typesafety used in almost all projects. Typescript is a superset of JavaScript that adds type definitions to the language.',
-                href: 'https://www.python.org/',
+                href: 'https://www.typescriptlang.org/',
                 experienceLevel: 'Intermediate',
                 image: {
                     url: '/assets/typescript.avif',
