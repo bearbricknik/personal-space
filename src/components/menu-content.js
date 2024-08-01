@@ -9,7 +9,7 @@ export const MenuContent = () => (
     <div className="flex flex-col gap-4">
       <Link href="/" className="inline-flex items-center gap-2 rounded-lg p-2 ring-1 ring-gray-300 hover:bg-gray-200">
         <img
-          src="https://media.licdn.com/dms/image/D5603AQFv8b8SC28ZxQ/profile-displayphoto-shrink_400_400/0/1715925605268?e=1721865600&v=beta&t=PYK2h16ZfDAfDoRATd9GnCS1w_To0j5xf9OtolMLlcU"
+          src="/assets/profileImage.jpeg"
           alt="Dominik Huber"
           width={40}
           height={40}
