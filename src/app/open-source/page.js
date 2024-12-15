@@ -12,7 +12,7 @@ export default async function OS() {
             <div className="content-wrapper">
                 <div className="content">
                     <PageTitle title="Open Source Content" />
-                    <p>We soon cooking here some free content meals. Come back later...</p>
+                    <p>We soon cooking some free content meals here. Come back later...</p>
                 </div>
             </div>
         </ScrollArea>
