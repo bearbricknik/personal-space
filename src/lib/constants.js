@@ -6,7 +6,8 @@ import {
   FolderOpenDot,
   Rocket,
   Layers,
-  UserPlus
+  UserPlus,
+  CodeXml
 } from 'lucide-react'
 
 export const PROFILES = {
@@ -101,6 +102,11 @@ export const LINKS = [
     href: '/projects',
     label: 'Projects',
     icon: <FolderOpenDot size={16} />
+  },
+  {
+    href: '/open-source',
+    label: 'Open Source (free)',
+    icon: <CodeXml size={16} />
   },
   {
     href: '/stack',
