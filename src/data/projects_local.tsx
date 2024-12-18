@@ -22,7 +22,6 @@ export const projects = [
             {
                 title: 'NexosSolutions - A Browser Extension & App to automate the purchase process',
                 description: 'A browser extension for desktop, iOS & android and on top a mobile app that automates the process of purchasing limited items. Based on web-requests it automated the process of selecting, purchasing, submitting information & checking out the items. Due to the nature of the products (limited items) the software was built to be as fast as possible to get as many items as possible.',
-                href: 'https://nexossolutions.com/',
                 technologies: ['React Native', 'Expo', 'NodeJS', 'Express', 'Javascript', 'HTML', 'CSS', 'Webpack', 'MongoDB'],
                 image: {
                     url: '/assets/nexosios.jpeg',

@@ -92,6 +92,11 @@ export const stacks = [
                 experienceLevel: 'Professional',
             },
             {
+                title: 'Chrome Extensions & Webpack',
+                description: 'Used to deliver react chrome extensions for the browser such as automated buying software, scrapers and helpful tools.',
+                experienceLevel: 'Intermediate',
+            },
+            {
                 title: 'NodeJS Backend Framework',
                 description: 'The backend framework for the NexosSolutions Extension and App. Our API is built with NodeJS and ExpressJS to deliver the data to the frontend.',
                 href: 'https://nodejs.org/en',

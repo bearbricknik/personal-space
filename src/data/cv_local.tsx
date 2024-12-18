@@ -27,7 +27,6 @@ export const cvhistory = [
             {
                 title: 'Pandemic & the Idea of NexosSolutions',
                 description: 'During the pandemic I got bored and started to look deeper into coding. I started to build my own software which was a browser extensions in plain JavaScript, HTML & CSS. I built that software together with my team. All of us had the same goal, to make the software as good as possible and to reduce our costs and get more limited items. NexosSolution was born.',
-                href: 'https://nexossolutions.com/',
                 image: {
                     url: '/assets/nexosios.jpeg',
                     width: 600,

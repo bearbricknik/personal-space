@@ -6,8 +6,9 @@ import {
   FolderOpenDot,
   Rocket,
   Layers,
-  UserPlus,
-  CodeXml
+  CodeXml,
+  FolderMinus,
+  Globe
 } from 'lucide-react'
 
 export const PROFILES = {
@@ -59,13 +60,13 @@ export const LATESTPROJECTS = {
   },
   nexosSolutions: {
     title: 'Nexos Solutions',
-    url: 'https://nexossolutions.com/',
-    icon: <FolderOpenDot size={16} />
+    url: '',
+    icon: <FolderMinus size={16} />
   },
   nexosProxies: {
     title: 'Nexos Proxies',
     url: '',
-    icon: <FolderOpenDot size={16} />
+    icon: <FolderMinus size={16} />
   },
 }
 
@@ -91,7 +92,7 @@ export const LINKS = [
   {
     href: '/',
     label: 'Welcome',
-    icon: <UserPlus size={16} />
+    icon: <Globe size={16} />
   },
   {
     href: '/cv',
