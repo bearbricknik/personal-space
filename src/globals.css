@@ -204,3 +204,18 @@
     @apply bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px];
   }
 }
+
+pre {
+  overflow-x: auto;
+  overflow-y: auto;      /* Enable vertical scrolling */
+  max-height: 500px;     /* Limit the height to 500px */
+  padding: 1rem;
+  border-radius: 8px;    /* Rounded corners */
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+ 
+pre [data-line] {
+  padding: 0 1rem;
+}

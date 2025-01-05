@@ -1,14 +1,16 @@
 import million from 'million/compiler'
 import createMDX from '@next/mdx'
+import { rehypePrettyCode } from 'rehype-pretty-code'
 
 const withMDX = createMDX({
+  extension: /\.mdx?$/,
   // Optionally provide remark and rehype plugins
   options: {
     // If you use remark-gfm, you'll need to use next.config.mjs
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
-    rehypePlugins: [],
+    rehypePlugins: [rehypePrettyCode],
   },
 })
 
