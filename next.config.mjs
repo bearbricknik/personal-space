@@ -1,4 +1,16 @@
 import million from 'million/compiler'
+import createMDX from '@next/mdx'
+
+const withMDX = createMDX({
+  // Optionally provide remark and rehype plugins
+  options: {
+    // If you use remark-gfm, you'll need to use next.config.mjs
+    // as the package is ESM only
+    // https://github.com/remarkjs/remark-gfm#install
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,6 +29,7 @@ const nextConfig = {
     deviceSizes: [390, 435, 768, 1024, 1280],
     formats: ['image/avif']
   },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   async redirects() {
     return [
       {
@@ -115,4 +128,4 @@ const millionConfig = {
   rsc: true
 }
 
-export default million.next(nextConfig, millionConfig)
+export default withMDX(million.next(nextConfig, millionConfig))
