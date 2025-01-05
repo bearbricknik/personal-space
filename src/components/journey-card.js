@@ -1,5 +1,5 @@
 
-import { CircleGauge, Code2 } from 'lucide-react'
+import { CircleGauge } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -17,11 +17,7 @@ export const JourneyCard = ({ title, description, image, index, href, experience
     )}
     {technologies && technologies.length > 0 && (
       <div className="mt-1 flex flex-col text-sm sm:items-start md:flex-row md:items-center">
-        <div className='flex flex-row items-center gap-1'>
-          <Code2 className='text-blue-500' size={14} />
-          <span>Technologies:</span>
-        </div>
-        <span className="ml-1 font-bold">{technologies.join(', ')}</span>
+        <span className="font-bold">{technologies.join(', ')}</span>
       </div>
     )}
     {image?.url && (
