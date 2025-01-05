@@ -208,14 +208,14 @@
 pre {
   overflow-x: auto;
   overflow-y: auto;      /* Enable vertical scrolling */
-  max-height: 500px;     /* Limit the height to 500px */
-  padding: 1rem;
-  border-radius: 8px;    /* Rounded corners */
+  max-height: 700px;     /* Limit the height to 500px */
+  padding: 0.5rem;
+  border-radius: 16px;    /* Rounded corners */
   background-color: #1e1e1e;
   color: #dcdcdc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
  
 pre [data-line] {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
