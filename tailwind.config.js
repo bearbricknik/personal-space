@@ -13,6 +13,10 @@ module.exports = {
       xl: '1280px'
     },
     extend: {
+      scale: {
+        '102': '1.02',
+        '175': '1.75',
+      },
       animation: {
         reveal: 'reveal 0.7s ease-in-out'
       },
