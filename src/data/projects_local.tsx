@@ -14,6 +14,19 @@ export const projects = [
                     title: 'ProfitPath Logo',
                     description: 'ProfitPath Logo'
                 }
+            },
+            {
+                title: 'ProfitPath Companion - Turbocharge your sourcing',
+                description: 'The ProfitPath Companion enhances your research by providing valuable insights on products you are browsing. ProfitPath Go allows you to easily view GTIN or EAN codes on each individual page, you can go to any website, visit a specific product page and get the GTIN for it directly.',
+                href: 'https://chromewebstore.google.com/detail/profitpath-companion/kjcdokagfjgbhmmemolnmgccgoklglif',
+                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
+                image: {
+                    url: '/assets/profitpath_companion.png',
+                    width: 600,
+                    height: 600,
+                    title: 'ProfitPath Companion',
+                    description: 'ProfitPath Companion'
+                }
             }
         ]
     },

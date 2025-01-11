@@ -5,7 +5,7 @@ export const cvhistory = [
         logs: [
             {
                 title: 'UI / UX Developer at ProfitPath',
-                description: 'Since the start of the company, we have been working on the software ProfitPath. A tool for amazon sellers to find new profitable items for their online shops.',
+                description: 'Since the start of the company, we have been working on the software ProfitPath. A tool for amazon sellers to find new profitable items for their online shops. It started with Amazon Arbitrage and meanwhile got to a point where we monitor almost 100 Million products every single day and show our users products with profit.',
                 href: 'https://profitpath.app/en',
                 image: {
                     url: '/assets/seo_image.png',
