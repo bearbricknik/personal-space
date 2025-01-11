@@ -15,7 +15,7 @@ export const config = {
   // The below solution also filters out the user navigations which is not desired:
   // See: https://github.com/vercel/next.js/discussions/37736#discussioncomment-7886601
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|robots.txt|sitemap.xml|sitemap-0.xml|favicon.ico).*)',
     {
       source: '/writing/:path/',
       missing: [

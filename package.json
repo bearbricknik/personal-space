@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "prettier": "prettier --write \"**/*.{html,js,jsx,json,md,mdx,mjs}\"",
     "clear-cache": "rm -rf .next",
