@@ -14,7 +14,7 @@ export default async function OS() {
             <div className="content-wrapper">
                 <div className="content">
                     <PageTitle title="Open Source Content" />
-                    <p>We soon cooking some free content meals here. Come back later...</p>
+                    <p>This space gives you free content about design patterns, best practices, ideas, free code snippets and much more to learn from. It is important to outline that all content here is <string>free of charge</string> and ready to be downloaded & used within your app. Have fun #opensource #buildinpublic</p>
                     <div className='grid w-full grid-cols-1 gap-2 md:grid-cols-2'>
                         {opensource_content_posts.map((content, index) => {
 
