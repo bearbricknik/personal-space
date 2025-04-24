@@ -16,6 +16,19 @@ export const projects = [
                 }
             },
             {
+                title: 'ProfitGo - A Chrome Extension',
+                description: 'ProfitGo helps you find winning Online Arbitrage products by revealing insights and profit potential for smarter decisions.',
+                href: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
+                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
+                image: {
+                    url: '/assets/profitgo_extension.png',
+                    width: 600,
+                    height: 600,
+                    title: 'ProfitGo',
+                    description: 'ProfitGo'
+                }
+            },
+            {
                 title: 'ProfitPath Companion - Turbocharge your sourcing',
                 description: 'The ProfitPath Companion enhances your research by providing valuable insights on products you are browsing. ProfitPath Go allows you to easily view GTIN or EAN codes on each individual page, you can go to any website, visit a specific product page and get the GTIN for it directly.',
                 href: 'https://chromewebstore.google.com/detail/profitpath-companion/kjcdokagfjgbhmmemolnmgccgoklglif',
@@ -26,19 +39,6 @@ export const projects = [
                     height: 600,
                     title: 'ProfitPath Companion',
                     description: 'ProfitPath Companion'
-                }
-            },
-            {
-                title: 'ProfitGo - A Chrome Extension',
-                description: 'ProfitGo helps you find winning Online Arbitrage products by revealing insights and profit potential for smarter decisions.',
-                href: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
-                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
-                image: {
-                    url: '/assets/profitpath_companion.png',
-                    width: 600,
-                    height: 600,
-                    title: 'ProfitGo',
-                    description: 'ProfitGo'
                 }
             }
         ]
