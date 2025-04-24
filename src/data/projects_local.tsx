@@ -27,6 +27,19 @@ export const projects = [
                     title: 'ProfitPath Companion',
                     description: 'ProfitPath Companion'
                 }
+            },
+            {
+                title: 'ProfitGo - A Chrome Extension',
+                description: 'ProfitGo helps you find winning Online Arbitrage products by revealing insights and profit potential for smarter decisions.',
+                href: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
+                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
+                image: {
+                    url: '/assets/profitpath_companion.png',
+                    width: 600,
+                    height: 600,
+                    title: 'ProfitGo',
+                    description: 'ProfitGo'
+                }
             }
         ]
     },

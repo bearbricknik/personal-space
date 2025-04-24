@@ -63,6 +63,11 @@ export const LATESTPROJECTS = {
     url: 'https://chromewebstore.google.com/detail/profitpath-companion/kjcdokagfjgbhmmemolnmgccgoklglif',
     icon: <FolderOpenDot size={16} />
   },
+  profit_go: {
+    title: 'ProfitGo',
+    url: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
+    icon: <FolderOpenDot size={16} />
+  },
   nexosSolutions: {
     title: 'Nexos Solutions',
     url: '',
