@@ -5,7 +5,7 @@ export const projects = [
             {
                 title: 'ProfitPath - A Sourcing Software',
                 description: 'A software that helps Amazon sellers to find new profitable items for their online shops. The software is built with React, NextJS and NodeJS. We analyze product feed data from hundreds of suppliers around the world and calculate profit, roi, margin and other important metrics for the sellers. We add value to the sellers by providing them with a faster solution than manual product sourcing.',
-                href: 'https://profitpath.app/en',
+                href: 'https://profitpath.com/en',
                 technologies: ['React', 'NextJS', 'Golang', 'SQL', 'PostgreSQL', 'Typescript', 'TailwindCSS', 'ReactQuery', 'TRPC'],
                 image: {
                     url: '/assets/seo_image.png',

@@ -9,7 +9,7 @@ import { JourneyCard } from '@/components/journey-card'
 const recentProjects = [
   {
     project: 'ProfitPath',
-    href: 'https://profitpath.app/en',
+    href: 'https://profitpath.com/en',
     logs: [
       {
         title: 'ProfitPath Sourcing Software',
@@ -44,7 +44,7 @@ export default async function Home() {
             Ultimately I found my passion in web development and started to learn ReactJS and NextJS and additionally
             API Design.
           </p>
-          <p>Finally, I am now working on my own projects and all my passion & energy currently goes into <Link href="https://profitpath.app/en" className='font-medium underline underline-offset-2'>ProfitPath</Link>.
+          <p>Finally, I am now working on my own projects and all my passion & energy currently goes into <Link href="https://profitpath.com/en" className='font-medium underline underline-offset-2'>ProfitPath</Link>.
             It's a software accessible through your browser that helps you building your Amazon Business with ease. We help you finding profitable products for your Amazon Shop. If you want to find out more about us, visit our website or contact me directly throught <span className='font-medium'>LinkedIn</span>.
           </p>
           <div className="flex flex-col items-stretch gap-12">

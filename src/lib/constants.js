@@ -55,7 +55,7 @@ export const PROFILES = {
 export const LATESTPROJECTS = {
   profitpath: {
     title: 'ProfitPath',
-    url: 'https://profitpath.app',
+    url: 'https://profitpath.com/en',
     icon: <FolderOpenDot size={16} />
   },
   profit_go: {
