@@ -16,8 +16,8 @@ export const projects = [
                 }
             },
             {
-                title: 'ProfitGo - A Chrome Extension',
-                description: 'ProfitGo helps you find winning Online Arbitrage products by revealing insights and profit potential for smarter decisions.',
+                title: 'ProfitGo - Mobile App & Chrome Extension',
+                description: 'ProfitGo is a lightweight android & ios mobile app and chrome extension that analyzes products on any website giving you insights on product data and other metrics to make smarter decisions.',
                 href: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
                 technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
                 image: {

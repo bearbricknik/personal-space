@@ -12,8 +12,8 @@ const recentProjects = [
     href: 'https://profitpath.com/en',
     logs: [
       {
-        title: 'ProfitPath Sourcing Software',
-        description: 'ProfitPath sourcing software scans through hundreds of suppliers to find profitpath products for your Amazon Shop. It analyzes historical data, calculates ROI, Margin and another key metrics to help you make the right decision.',
+        title: 'ProfitPath Software',
+        description: 'ProfitPath analyzes data from 700+ suppliers to identify profitable Amazon arbitrage opportunities, featuring automated wholesale scanning, competitor spy search, and comprehensive profit calculations across EU regions & UK.',
         image: {
           url: '/assets/seo_image.png',
           width: 600,
@@ -35,17 +35,12 @@ export default async function Home() {
         <div className="content">
           <PageTitle title="Welcome to my Portfolio" />
           <p>
-            Hi 👋 I'm Dominik, a previous automative & engine student at the University of Stuttgart, Germany. During
-            the pandemic I teached myself how to write code and since then I am in various software projects.
+            Hi 👋 I'm Dominik, a former automotive and engine engineering student at the University of Stuttgart, Germany. During the pandemic, I taught myself programming and have since been involved in various software development projects.
           </p>
           <p>
-            I started my journey with creating browser extensions in plain JavaScript with the great help of my team as
-            I struggled with HTML and CSS at that time. I then moved on to do scraping projects with Python and NodeJS.
-            Ultimately I found my passion in web development and started to learn ReactJS and NextJS and additionally
-            API Design.
+            I began my journey by creating browser extensions using vanilla JavaScript, with invaluable support from my team as I initially struggled with HTML and CSS fundamentals. I then progressed to web scraping projects using Python and Node.js. Eventually, I discovered my passion for web development and began mastering React.js and Next.js, along with API design principles.
           </p>
-          <p>Finally, I am now working on my own projects and all my passion & energy currently goes into <Link href="https://profitpath.com/en" className='font-medium underline underline-offset-2'>ProfitPath</Link>.
-            It's a software accessible through your browser that helps you building your Amazon Business with ease. We help you finding profitable products for your Amazon Shop. If you want to find out more about us, visit our website or contact me directly throught <span className='font-medium'>LinkedIn</span>.
+          <p>This technical foundation led me to start developing innovative projects like <Link href="https://profitpath.com/en" className='hover:underline-accent-500 font-medium underline underline-offset-2 hover:text-accent-500'>ProfitPath</Link>, a comprehensive Amazon arbitrage software platform that simplifies online arbitrage for sellers. ProfitPath analyzes data from over 700+ companies and suppliers, 200M+ updated products on a daily basis, providing users with powerful tools like supplier search, wholesale scanning, competitor analysis, and automated profit calculations. The platform helps Amazon sellers maximize profits and save valuable time by automating the tedious process of product sourcing and analysis. Working on such data-intensive applications has deepened my understanding of how modern web technologies can solve real-world business challenges and create meaningful impact for users. If you want to find out more about us, visit our website or contact me directly throught <Link href="https://www.linkedin.com/in/dominik-huber-7a4394227/" className='hover:underline-accent-500 font-medium underline underline-offset-2 hover:text-accent-500'>LinkedIn</Link>.
           </p>
           <div className="flex flex-col items-stretch gap-12">
             {recentProjects.map((item, itemIndex) => (

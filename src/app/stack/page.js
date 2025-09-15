@@ -3,7 +3,7 @@ import { FloatingHeader } from '@/components/floating-header'
 import { PageTitle } from '@/components/page-title'
 import { GradientBg3 } from '@/components/gradient-bg'
 import { JourneyCard } from '@/components/journey-card'
-import { Database, Code2 } from 'lucide-react'
+import { Database, Code2, Webhook } from 'lucide-react'
 import { stacks } from '../../data/stack_local'
 
 export default async function Home() {
@@ -15,8 +15,9 @@ export default async function Home() {
         <div className="content">
           <PageTitle title="Tech Stack" />
           <p>
-            In the following I am presenting you my Tech Stack which I all learned by videos & courses on the internet.
-            Youtube & Udemy are your best friends when it comes to learn new skills.{' '}
+            Below you'll find my tech stack, which I've built entirely through self-directed learning using online resources.
+            YouTube and Udemy have been invaluable companions on this journey, proving that with dedication and the right
+            tutorials, you can master any technology from scratch. {" "}
           </p>
           <div className="flex flex-col items-stretch gap-12">
             {stacks.map((item, itemIndex) => (
@@ -34,7 +35,7 @@ export default async function Home() {
                         </div>
                       )}
                       <div className="z-0 flex size-6 shrink-0 items-center justify-center rounded-full bg-black align-middle text-white">
-                        {item.type === 'frameworks' ? <Code2 size={16} /> : <Database size={16} />}
+                        {item.type === 'frameworks' ? <Code2 size={14} /> : item.type === 'sdk' ? <Webhook size={14} /> : <Database size={14} />}
                       </div>
                       <div className="grow pl-8">
                         <JourneyCard {...log} index={logIndex} href={log.href} />

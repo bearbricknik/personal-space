@@ -13,6 +13,16 @@ module.exports = {
       xl: '1280px'
     },
     extend: {
+      colors: {
+
+        accent: {
+          DEFAULT: 'hsl(var(--accent) / <alpha-value>))',
+          foreground: 'hsl(var(--accent-foreground) / <alpha-value>))',
+          500: 'rgb(var(--accent500) / <alpha-value>)',
+          600: 'rgb(var(--accent600) / <alpha-value>)'
+        },
+
+      },
       scale: {
         '102': '1.02',
         '175': '1.75',

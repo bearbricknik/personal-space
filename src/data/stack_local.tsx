@@ -142,5 +142,50 @@ export const stacks = [
                 }
             },
         ]
+    },
+    {
+        stack: 'SDKs',
+        type: 'sdk',
+        logs: [
+            {
+                title: 'Stripe',
+                description: 'A payment processing platform that allows you to accept payments online. Used for the ProfitPath Software to process payments & enable flexible payment options for our users.',
+                href: 'https://stripe.com/de',
+                experienceLevel: 'Intermediate',
+                image: {
+                    url: '/assets/stripe.png',
+                    width: 500,
+                    height: 500,
+                    title: 'Stripe Logo',
+                    description: 'Stripe Logo'
+                }
+            },
+            {
+                title: 'Supabase',
+                description: 'A PostgreSQL-compatible database that is fully open-source and provides a comprehensive set of features for building modern applications.',
+                href: 'https://supabase.com/',
+                experienceLevel: 'Intermediate',
+                image: {
+                    url: '/assets/supabase.png',
+                    width: 500,
+                    height: 500,
+                    title: 'Supabase Logo',
+                    description: 'Supabase Logo'
+                }
+            },
+            {
+                title: 'Tanstack',
+                description: 'An SDK that puts developer experience first & manages routes, data fetching, forms & tables inside profitpath. We use Tanstack Query to fetch data from our database and Tanstack Table to display the data in a table.',
+                href: 'https://tanstack.com/',
+                experienceLevel: 'Intermediate',
+                image: {
+                    url: '/assets/tanstack.png',
+                    width: 500,
+                    height: 500,
+                    title: 'Tanstack Logo',
+                    description: 'Tanstack Logo'
+                }
+            }
+        ]
     }
 ]

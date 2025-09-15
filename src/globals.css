@@ -12,10 +12,15 @@
     --sh-string: hsl(138.58deg 77.94% 27.65%);
     --sh-keyword: rgb(215, 58, 73);
     --sh-comment: #a19595;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent500: 59 139 246;
+    --accent600: 37 99 235;
   }
 
   ::selection {
-    @apply bg-black text-white;
+    @apply bg-accent-500 text-white;
   }
 
   html,

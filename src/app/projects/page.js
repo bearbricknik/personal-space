@@ -15,9 +15,11 @@ export default async function Home() {
         <div className="content">
           <PageTitle title="Projects" />
           <p>
-            Throughout the last couple of years I worked on different personal projects with my own software company.
-            All of them are linked down below. Do not hesitate to contact me if you have any questions or feedback or if
-            you are <span className="font-medium">interested in one of the products</span>.
+            Over the past few years, I've been building and launching various projects through my software company,
+            each one teaching me something new about entrepreneurship and product development. From browser extensions
+            to full-scale web applications, these projects represent my journey from coding enthusiast to product creator.
+            Feel free to reach out if you'd like to discuss any of these projects, share feedback, or explore potential
+            <span className="font-bold text-accent-500/80"> collaboration opportunities</span>.
           </p>
           <div className="flex flex-col items-stretch gap-6">
             {projects.map((item, itemIndex) => (

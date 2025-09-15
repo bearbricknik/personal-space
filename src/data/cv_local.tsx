@@ -1,6 +1,15 @@
 
 export const cvhistory = [
     {
+        year: '2025',
+        logs: [
+            {
+                title: 'Still ongoing...',
+                description: 'What started as a side project has become my digital obsession. I\'m still passionately working on it, constantly adding new features, fixing bugs (and probably creating new ones), and trying to make it better every day. It\'s like raising a digital child - sometimes it behaves perfectly, other times it throws tantrums at 3 AM, but I love it unconditionally.',
+            }
+        ]
+    },
+    {
         year: '2023',
         logs: [
             {

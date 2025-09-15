@@ -15,7 +15,7 @@ export default async function CV() {
       <div className="content-wrapper">
         <div className="content">
           <PageTitle title="Curriculum vitae" />
-          <p>Lets start at the very beginning and where I am now.</p>
+          <p>Lets start with where I am now and then go back in time to where I started.</p>
           <div className="flex flex-col items-stretch gap-12">
             {cvhistory.map((item, itemIndex) => (
               <div key={`data_${itemIndex}`} className="flex flex-col items-baseline gap-6 md:flex-row md:gap-12">
