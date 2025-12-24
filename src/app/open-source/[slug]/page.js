@@ -6,6 +6,14 @@ import { GradientBg3 } from '@/components/gradient-bg'
 import fs from 'fs'
 import path from 'path'
 
+// Static imports for webpack to analyze
+import PressableButton from '@/content/open-source/pressable-button.mdx'
+
+// Mapping of slugs to MDX components
+const contentMap = {
+    'pressable-button': PressableButton,
+}
+
 // Add force-static rendering
 export const dynamic = 'force-static'
 export const dynamicParams = false
@@ -27,7 +35,11 @@ export async function generateStaticParams() {
 export default async function OS({ params }) {
     const { slug } = params
 
-    const { default: Content } = await import(`@/content/open-source/${slug}.mdx`)
+    const Content = contentMap[slug]
+
+    if (!Content) {
+        return <div>Content not found</div>
+    }
 
     return (
         <ScrollArea useScrollAreaId>
