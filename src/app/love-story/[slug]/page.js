@@ -70,7 +70,7 @@ const Angelina = ({ slug }) => {
       <PageTitle title={`Die Gemeinsamkeiten...`} />
       <p>... und ja wir haben einiges gemeinsam. Wenn ich nach deinem Profil gehe, dann gehst du sehr gerne reisen und warst auch schon in einigen Ländern. Witzigerweise waren wir beide schon in Australien und in Thailand (da haben wir schon den ersten Gesprächsstoff für unser erstes Date gefunden). Reisen scheint dir auf jeden Fall sehr wichtig zu sein, und so auch mir <PlusPunkt />.</p>
 
-      <p>Da du dich selbst als ein "spontaner" Roadtrip voller Überraschungen beschreibst, gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten (ich bin gespannt für welche du dich entscheidest):</p>
+      <p>Da du dich selbst als ein "spontaner Roadtrip voller Überraschungen" beschreibst, gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten (ich bin gespannt für welche du dich entscheidest):</p>
 
       <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
       <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste. Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.</p>
