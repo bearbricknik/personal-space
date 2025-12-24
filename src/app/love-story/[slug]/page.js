@@ -49,7 +49,7 @@ function LoveStoryPage({ params }) {
             liegt vermutlich daran, dass ich einen 22 Stunden Flug hinter mir habe.
             Aber ich bin sicher, dass wir zusammen sehr gut aussehen würden.
             Dafür würde ich uns einen weiteren <PlusPunkt /> geben.
-            Bisher schlagen wir uns ziemlich gut zusammen würde ich behaupten.
+            Bisher geben wir doch ein ziemlich gutes Bild zusammen ab, oder?
           </p>
           <ImagePlayground imagePathLeft='/dominik.jpg' imagePathRight={`/${slug}.jpg`} />
 
