@@ -106,11 +106,12 @@ export const DateSelector = ({ question = 'Willst du mir mir ausgehen?' }) => {
                 <Label htmlFor="date-question" className="text-lg">
                     {question}
                 </Label>
-                <div className="flex gap-4">
+                <div className="flex w-full flex-wrap gap-4">
                     <Button
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         disabled={selected !== null}
+                        className="min-w-[120px] flex-1"
                     >
                         Ja
                     </Button>
@@ -118,6 +119,7 @@ export const DateSelector = ({ question = 'Willst du mir mir ausgehen?' }) => {
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         disabled={selected !== null}
+                        className="min-w-[120px] flex-1"
                     >
                         Ja auf jeden Fall
                     </Button>
@@ -125,6 +127,7 @@ export const DateSelector = ({ question = 'Willst du mir mir ausgehen?' }) => {
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         disabled={selected !== null}
+                        className="min-w-[120px] flex-1"
                     >
                         Definitiv
                     </Button>
@@ -132,6 +135,7 @@ export const DateSelector = ({ question = 'Willst du mir mir ausgehen?' }) => {
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         disabled={selected !== null}
+                        className="min-w-[120px] flex-1"
                     >
                         Ganz sicher
                     </Button>
