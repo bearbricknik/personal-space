@@ -103,7 +103,8 @@ const Angelina = ({ slug }) => {
       <p>Aber viel interessanter ist, dass du ebenfalls auf dem Tomorrowland 2024 warst und wir uns da nicht gesehen haben 🙁.
         Warst du bisher nur einmal oder schon mehrfach? Und wie hat es dir gefallen? Daraus entnehme ich ebenfalls,
         dass du ein großer <span className='font-semibold'>Techno-Fan</span> bist?
-        Klangkünstler? Amelie Lens? 999999999? Sarah Landry? Anyma? Ich denke alle diese DJ's sind dir ein Begriff, oder?
+        Klangkünstler? Amelie Lens? 999999999? Sarah Landry? Anyma? Ich denke alle diese DJ's sind dir ein Begriff, oder? Du hast
+        auch sicher schonmal vom <span className='font-semibold'>Bootshaus in Köln</span> gehört, oder? Da seh ich uns...
         Und zack, da haben wir die nächste Gemeinsamkeit: Wir hören beide gerne Techno <PlusPunkt />.
       </p>
     </>
