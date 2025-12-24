@@ -51,7 +51,7 @@ function LoveStoryPage({ params }) {
           {/** Generic Content, can be used for all love stories */}
           <PageTitle title={`Das große Date`} />
           <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus. Basta.</p>
-          <p>Ich habe bereits <span className='font-semibold'>mindestens 5 Pluspunkte</span> gesammelt. Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du? Deshalb stell ich dir jetzt die Frage, ob du mir mir ausgehen möchtest? Du kannst die Frage mit den Buttons unten beantworten.</p>
+          <p>Ich habe bereits <span className='font-semibold'>mindestens 5 Pluspunkte</span> gesammelt. Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du? Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest? Du kannst die Frage mit den Buttons unten beantworten.</p>
           <DateSelector />
         </div>
       </div>
