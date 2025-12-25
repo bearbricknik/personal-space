@@ -17,24 +17,53 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
             const randomInRange = (min, max) =>
                 Math.random() * (max - min) + min
 
+            // Create heart emoji shape - check if shapeFromText is available
+            let heartEmoji
+            try {
+                if (typeof confetti.shapeFromText === 'function') {
+                    heartEmoji = confetti.shapeFromText({ text: '❤️' })
+                }
+            } catch (e) {
+                // Fallback if shapeFromText is not available
+                console.warn('shapeFromText not available, using default shapes')
+            }
+
             const interval = window.setInterval(() => {
                 const timeLeft = animationEnd - Date.now()
 
                 if (timeLeft <= 0) {
-                    return clearInterval(interval)
+                    clearInterval(interval)
+                    // Reset selected state after animation completes
+                    setSelected(null)
+                    return
                 }
 
                 const particleCount = 50 * (timeLeft / duration)
-                confetti({
+                const confettiOptions = {
                     ...defaults,
                     particleCount,
+                    scalar: 2,
                     origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-                })
-                confetti({
+                }
+
+                if (heartEmoji) {
+                    confettiOptions.shapes = [heartEmoji]
+                }
+
+                confetti(confettiOptions)
+
+                const confettiOptions2 = {
                     ...defaults,
                     particleCount,
+                    scalar: 2,
                     origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-                })
+                }
+
+                if (heartEmoji) {
+                    confettiOptions2.shapes = [heartEmoji]
+                }
+
+                confetti(confettiOptions2)
             }, 250)
 
             return () => {
@@ -63,7 +92,10 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                 const timeLeft = animationEnd - Date.now()
 
                 if (timeLeft <= 0) {
-                    return clearInterval(interval)
+                    clearInterval(interval)
+                    // Reset selected state after animation completes
+                    setSelected(null)
+                    return
                 }
 
                 const particleCount = 50 * (timeLeft / duration)
@@ -110,7 +142,6 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                     <Button
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
-                        disabled={selected !== null}
                         className="min-w-[120px] flex-1"
                     >
                         Ja
@@ -118,7 +149,6 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                     <Button
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
-                        disabled={selected !== null}
                         className="min-w-[120px] flex-1"
                     >
                         Ja auf jeden Fall
@@ -126,7 +156,6 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                     <Button
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
-                        disabled={selected !== null}
                         className="min-w-[120px] flex-1"
                     >
                         Definitiv
@@ -134,7 +163,6 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                     <Button
                         onClick={() => setSelected('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
-                        disabled={selected !== null}
                         className="min-w-[120px] flex-1"
                     >
                         Ganz sicher
@@ -142,7 +170,6 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                     {/* <Button
                         onClick={() => setSelected('nein')}
                         variant={selected === 'nein' ? 'default' : 'outline'}
-                        disabled={selected !== null}
                     >
                         Nein
                     </Button> */}

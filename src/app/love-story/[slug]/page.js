@@ -7,8 +7,14 @@ import { Heart } from 'lucide-react'
 import { DateSelector } from '@/components/date-selector'
 
 const loveStoryParams = [
-  'angelina'
+  'angelina',
+  'antonia'
 ]
+
+const finalPlusPoints = {
+  angelina: 5,
+  antonia: 5
+}
 
 const PlusPunkt = ({ count = 1, brackets = true }) => {
   return (
@@ -55,12 +61,13 @@ function LoveStoryPage({ params }) {
 
           {/** Individual Content*/}
           <Angelina slug={slug} />
-          <AboutMe />
+          <Antonia slug={slug} />
+          <AboutMe slug={slug} />
 
           {/** Generic Content, can be used for all love stories */}
           <PageTitle title={`Das große Date`} />
-          <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus. Basta.</p>
-          <p>Ich habe bereits <span className='font-semibold'>mindestens 5 Pluspunkte</span> gesammelt.
+          <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus.</p>
+          <p>Ich habe bereits <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
             Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du?
             Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
             Du kannst die Frage mit den Buttons unten beantworten.
@@ -111,7 +118,38 @@ const Angelina = ({ slug }) => {
   )
 }
 
-const AboutMe = () => {
+const Antonia = ({ slug }) => {
+
+  if (slug !== 'antonia') return null
+
+  return (
+    <>
+      <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
+        deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
+      </p>
+
+      <PageTitle title={`Die Gemeinsamkeiten...`} />
+      <p>... und ja wir haben einiges gemeinsam.
+        Wenn ich nach deinem Profil gehe, dann gehst du sehr gerne ins Fitnesstudio und gehst Klettern.
+        Mit Klettern kann ich dir leider nicht dienen, bisher hab ich noch keinen Coach gefunden, der mir das beibringen kann.
+        Aber vielleicht bist du ja bald mein Coach?
+        Jedenfalls sehe ich da schon einen weiteren <PlusPunkt />.
+      </p>
+
+      <p>Da du selbst sagst, dass du neue Orte erkunden möchtest und gerne Sonne auf deiner Haut spürst,
+        gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten
+        (ich bin gespannt für welche du dich entscheidest):
+      </p>
+
+      <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+      <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
+        Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
+      </p>
+    </>
+  )
+}
+
+const AboutMe = ({ slug }) => {
   return (
     <>
       <p>Na gut, kommen wir nun zu ein paar Fakten über mich...</p>
@@ -147,14 +185,25 @@ const AboutMe = () => {
         P.S: Ich würde trotzdem mit dir meine Pizza teilen (<PlusPunkt brackets={false} />).
       </p>
 
-      <p>Ich hoffe, dass dir Tiere genauso wichtig sind wie mir.
-        Noch habe ich kein Haustier, aber ich werde irgendwann einen Hund in meinem Leben brauchen,
-        hoffe damit kommst du klar.
-        Keine Katze leider, weil ich davon überzeugt bin, dass Katzen heimlich
-        die <span className='font-semibold'>Weltherrschaft</span> planen.
-      </p>
+      {slug === 'angelina' ? (
+        <p>Ich hoffe, dass dir Tiere genauso wichtig sind wie mir.
+          Noch habe ich kein Haustier, aber ich werde irgendwann einen Hund in meinem Leben haben,
+          hoffe damit kommst du klar.
+          Keine Katze leider, weil ich davon überzeugt bin, dass Katzen heimlich
+          die <span className='font-semibold'>Weltherrschaft</span> planen.
+        </p>
+      ) : null}
 
-      <p>Natürlich war das noch nicht alles,
+      {slug === 'antonia' ? (
+        <p>Wie ich sehe sind dir Tiere genauso wie mir wichtig.
+          Noch habe ich kein Haustier, aber ich werde irgendwann einen Hund in meinem Leben haben
+          und da du bereits ein Hund hast, haben wir auch hier schon einen weiteren <PlusPunkt />.
+          Keine Katze leider, weil ich davon überzeugt bin, dass Katzen heimlich
+          die <span className='font-semibold'>Weltherrschaft</span> planen.
+        </p>
+      ) : null}
+
+      <p> Natürlich war das noch nicht alles,
         ich hab natürlich noch weitere Talente wie beispielsweise:
         Atmen, Wasser trinken, Schlafen, Laufen etc.
         Aber wenn ich jetzt anfange, alles aufzuzählen, dann sind wir am Ende bei 200 Pluspunkten.
