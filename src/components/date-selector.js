@@ -5,7 +5,7 @@ import confetti from 'canvas-confetti'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 
-export const DateSelector = ({ question = 'Willst du mir mir ausgehen?' }) => {
+export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
     const [selected, setSelected] = useState(null)
 
     useEffect(() => {
