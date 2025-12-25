@@ -43,6 +43,8 @@ export const FloatingHeader = memo(({ scrollTitle, title, goBackLink, children }
     return () => scrollAreaElem?.removeEventListener('scroll', onScroll)
   }, [scrollTitle])
 
+  if (pathname.startsWith('/love-story')) return null
+
   return (
     <header className="sticky inset-x-0 top-0 z-10 mx-auto flex h-12 w-full shrink-0 items-center overflow-hidden border-b bg-white text-sm font-medium lg:hidden">
       <div className="flex size-full items-center px-3">
