@@ -9,13 +9,15 @@ import { DateSelector } from '@/components/date-selector'
 const loveStoryParams = [
   'angelina',
   'antonia',
-  'sarah'
+  'sarah',
+  'me-and-sarah'
 ]
 
 const finalPlusPoints = {
   angelina: 5,
   antonia: 5,
-  sarah: 5
+  sarah: 5,
+  'me-and-sarah': 5
 }
 
 const PlusPunkt = ({ count = 1, brackets = true }) => {
@@ -32,7 +34,13 @@ function LoveStoryPage({ params }) {
     return <NotFound />
   }
 
-  const capitalizedSlug = slug.charAt(0).toUpperCase() + slug.slice(1)
+  let capitalizedSlug = ""
+
+  if (slug === 'me-and-sarah') {
+    capitalizedSlug = "Sarah"
+  } else {
+    capitalizedSlug = slug.charAt(0).toUpperCase() + slug.slice(1)
+  }
 
   return (
     <ScrollArea useScrollAreaId>
@@ -71,6 +79,7 @@ function LoveStoryPage({ params }) {
           <Angelina slug={slug} />
           <Antonia slug={slug} />
           <Sarah slug={slug} />
+          <SarahStory slug={slug} />
 
           <AboutMe slug={slug} />
 
@@ -172,6 +181,33 @@ const Sarah = ({ slug }) => {
       </p>
 
       <p>P.S: Ich sehe da nicht nur einen weiteren <PlusPunkt />, da wir beide gerne Reisen gehen, sondern du kannst mich auch auf deine Reise nach Lombok mitnehmen, ich war bisher nur in Thailand, aber sonst noch nirgends in Indonesien.</p>
+    </>
+  )
+}
+
+const SarahStory = ({ slug }) => {
+
+  if (slug !== 'me-and-sarah') return null
+
+  return (
+    <>
+      <p>... und ja wir haben einiges gemeinsam.
+        Wenn ich nach deinem Profil gehe, dann machst du sehr gerne Sport (siehst sehr sportlich aus). Ich weiß noch nicht welchen, aber das finden wir sicherlich heraus.
+        Lass mich raten: Fitness Studio, Pilates oder Tennis? Wie ich auf die Optionen komme, weiß ich nicht, aber irgendwie würden alle Optionen gut zu dir passen.
+        Jedenfalls sehe ich da schon einen weiteren <PlusPunkt />, nämlich dass wir beide gerne Sport treiben.
+      </p>
+
+      <p>Du scheinst auf jeden Fall auch auf Abenteuer zu stehen. Ich finde deine Optionen mit dem Freizeitpark oder dem Welness in den Bergen sehr spannend, ABER wir können es noch ein wenig spannender machen.
+        Ich gebe dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten
+        (ich bin gespannt für welche du dich entscheidest):
+      </p>
+
+      <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+      <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
+        Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
+      </p>
+
+      <p>P.S: Ich sehe da nicht nur einen weiteren <PlusPunkt />, da wir beide auf Abenteuer stehen, sondern das kann ja erst der Anfang sein einer noch viel längeren Reise.</p>
     </>
   )
 }
