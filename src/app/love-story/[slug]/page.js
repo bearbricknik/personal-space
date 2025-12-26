@@ -10,14 +10,16 @@ const loveStoryParams = [
   'angelina',
   'antonia',
   'sarah',
-  'me-and-sarah'
+  'me-and-sarah',
+  'merle'
 ]
 
 const finalPlusPoints = {
   angelina: 5,
   antonia: 5,
   sarah: 5,
-  'me-and-sarah': 5
+  'me-and-sarah': 5,
+  merle: 4
 }
 
 const PlusPunkt = ({ count = 1, brackets = true }) => {
@@ -80,6 +82,7 @@ function LoveStoryPage({ params }) {
           <Antonia slug={slug} />
           <Sarah slug={slug} />
           <SarahStory slug={slug} />
+          <Merle slug={slug} />
 
           <AboutMe slug={slug} />
 
@@ -128,6 +131,33 @@ const Angelina = ({ slug }) => {
         auch sicher schonmal vom <span className='font-semibold'>Bootshaus in Köln</span> gehört, oder? Da seh ich uns...
         Und zack, da haben wir die nächste Gemeinsamkeit: Wir hören beide gerne Techno <PlusPunkt />.
       </p>
+    </>
+  )
+}
+
+const Merle = ({ slug }) => {
+
+  if (slug !== 'merle') return null
+
+  return (
+    <>
+      <p>... und ja wir haben einiges gemeinsam.
+        Witzigerweise waren wir beide schon in Australien, meine Augen würden jederzeit wieder Whitsunday Islands erkennen
+        (da haben wir schon den ersten Gesprächsstoff für unser erstes Date gefunden).
+        Reisen scheint dir auf jeden Fall sehr wichtig zu sein, und so auch mir <PlusPunkt />.
+      </p>
+
+      <p>Da du selbst sagst, dass du alle Länder der Welt gesehen haben möchtest,
+        gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten
+        (ich bin gespannt für welche du dich entscheidest):
+      </p>
+
+      <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+      <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
+        Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
+        P.S: Für Apres-Ski und Aperol bin ich aber auch jederzeit zu haben.
+      </p>
+
     </>
   )
 }
