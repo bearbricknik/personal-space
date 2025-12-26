@@ -8,12 +8,14 @@ import { DateSelector } from '@/components/date-selector'
 
 const loveStoryParams = [
   'angelina',
-  'antonia'
+  'antonia',
+  'sarah'
 ]
 
 const finalPlusPoints = {
   angelina: 5,
-  antonia: 5
+  antonia: 5,
+  sarah: 5
 }
 
 const PlusPunkt = ({ count = 1, brackets = true }) => {
@@ -59,9 +61,17 @@ function LoveStoryPage({ params }) {
           </p>
           <ImagePlayground imagePathLeft='/dominik.jpg' imagePathRight={`/${slug}.jpg`} />
 
+          <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
+            deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
+          </p>
+
+          <PageTitle title={`Die Gemeinsamkeiten...`} />
+
           {/** Individual Content*/}
           <Angelina slug={slug} />
           <Antonia slug={slug} />
+          <Sarah slug={slug} />
+
           <AboutMe slug={slug} />
 
           {/** Generic Content, can be used for all love stories */}
@@ -85,11 +95,6 @@ const Angelina = ({ slug }) => {
 
   return (
     <>
-      <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
-        deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
-      </p>
-
-      <PageTitle title={`Die Gemeinsamkeiten...`} />
       <p>... und ja wir haben einiges gemeinsam.
         Wenn ich nach deinem Profil gehe, dann gehst du sehr gerne reisen und warst auch schon in einigen Ländern.
         Witzigerweise waren wir beide schon in Australien und in Thailand
@@ -124,11 +129,6 @@ const Antonia = ({ slug }) => {
 
   return (
     <>
-      <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
-        deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
-      </p>
-
-      <PageTitle title={`Die Gemeinsamkeiten...`} />
       <p>... und ja wir haben einiges gemeinsam.
         Wenn ich nach deinem Profil gehe, dann gehst du sehr gerne ins Fitnesstudio und gehst Klettern.
         Mit Klettern kann ich dir leider nicht dienen, bisher hab ich noch keinen Coach gefunden, der mir das beibringen kann.
@@ -145,6 +145,33 @@ const Antonia = ({ slug }) => {
       <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
         Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
       </p>
+    </>
+  )
+}
+
+const Sarah = ({ slug }) => {
+
+  if (slug !== 'sarah') return null
+
+  return (
+    <>
+      <p>... und ja wir haben einiges gemeinsam.
+        Wenn ich nach deinem Profil gehe, dann machst du sehr gerne Sport. Ich weiß noch nicht welchen, aber das finden wir sicherlich heraus.
+        Lass mich raten: Fitness Studio, Pilates oder Tennis? Wie ich auf die Optionen komme, weiß ich nicht, aber irgendwie würden alle Optionen gut zu dir passen.
+        Jedenfalls sehe ich da schon einen weiteren <PlusPunkt />, nämlich dass wir beide gerne Sport treiben.
+      </p>
+
+      <p>Du scheinst auf jeden Fall auch gerne zu reisen, deshalb
+        gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten
+        (ich bin gespannt für welche du dich entscheidest):
+      </p>
+
+      <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+      <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
+        Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
+      </p>
+
+      <p>P.S: Ich sehe da nicht nur einen weiteren <PlusPunkt />, da wir beide gerne Reisen gehen, sondern du kannst mich auch auf deine Reise nach Lombok mitnehmen, ich war bisher nur in Thailand, aber sonst noch nirgends in Indonesien.</p>
     </>
   )
 }
