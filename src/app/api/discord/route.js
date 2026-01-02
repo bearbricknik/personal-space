@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export const revalidate = 0;
 
 const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1456701589128745086/lFAqjajL1otuIueQlLZdWSzKB6JOeOka89moDFfbOJdgS5sZ1ZBWK6NF5xOEoSIvpYEQ';
 
-export async function POST(request: NextRequest) {
+export async function POST(request) { // eslint-disable-line no-unused-vars
     try {
         const body = await request.json();
         const message = body.message || 'Hello, world!';
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(
             {
                 success: false,
-                message: (error as Error).message
+                message: error.message
             },
             { status: 500, statusText: 'Internal Server Error' }
         );
