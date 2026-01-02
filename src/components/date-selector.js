@@ -5,7 +5,7 @@ import confetti from 'canvas-confetti'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 
-export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
+export const DateSelector = ({ question = 'Willst du mit mir ausgehen?', onAnswer }) => {
     const [selected, setSelected] = useState(null)
 
     useEffect(() => {
@@ -132,6 +132,11 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
         }
     }, [selected])
 
+    const handleAnswer = (answer) => {
+        setSelected(answer)
+        onAnswer(answer)
+    }
+
     return (
         <div className='flex w-full items-center justify-center rounded-lg border p-4'>
             <div className="flex flex-col items-center gap-2">
@@ -140,28 +145,28 @@ export const DateSelector = ({ question = 'Willst du mit mir ausgehen?' }) => {
                 </Label>
                 <div className="flex w-full flex-wrap gap-4">
                     <Button
-                        onClick={() => setSelected('ja')}
+                        onClick={() => handleAnswer('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         className="min-w-[120px] flex-1"
                     >
                         Ja
                     </Button>
                     <Button
-                        onClick={() => setSelected('ja')}
+                        onClick={() => handleAnswer('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         className="min-w-[120px] flex-1"
                     >
                         Ja auf jeden Fall
                     </Button>
                     <Button
-                        onClick={() => setSelected('ja')}
+                        onClick={() => handleAnswer('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         className="min-w-[120px] flex-1"
                     >
                         Definitiv
                     </Button>
                     <Button
-                        onClick={() => setSelected('ja')}
+                        onClick={() => handleAnswer('ja')}
                         variant={selected === 'ja' ? 'default' : 'outline'}
                         className="min-w-[120px] flex-1"
                     >

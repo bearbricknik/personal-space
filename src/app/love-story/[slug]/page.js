@@ -1,3 +1,5 @@
+'use client'
+
 import { ScrollArea } from '@/components/scroll-area'
 import { FloatingHeader } from '@/components/floating-header'
 import { PageTitle } from '@/components/page-title'
@@ -42,6 +44,24 @@ function LoveStoryPage({ params }) {
     capitalizedSlug = "Sarah"
   } else {
     capitalizedSlug = slug.charAt(0).toUpperCase() + slug.slice(1)
+  }
+
+  const sendWebhook = async (answer) => {
+    try {
+      await fetch('/api/discord', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          answer,
+          slug,
+          message: `Someone answered "${answer}" for ${capitalizedSlug}'s love story!`
+        }),
+      });
+    } catch (error) {
+      console.error('Failed to send webhook:', error);
+    }
   }
 
   return (
@@ -94,7 +114,7 @@ function LoveStoryPage({ params }) {
             Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
             Du kannst die Frage mit den Buttons unten beantworten.
           </p>
-          <DateSelector />
+          <DateSelector onAnswer={sendWebhook} />
         </div>
       </div>
     </ScrollArea>
