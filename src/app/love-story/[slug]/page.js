@@ -9,6 +9,7 @@ import { Heart } from 'lucide-react'
 import { DateSelector } from '@/components/date-selector'
 
 const loveStoryParams = [
+  'annalena',
   'angelina',
   'antonia',
   'sarah',
@@ -17,6 +18,7 @@ const loveStoryParams = [
 ]
 
 const finalPlusPoints = {
+  annalena: 4,
   angelina: 5,
   antonia: 5,
   sarah: 5,
@@ -98,6 +100,7 @@ function LoveStoryPage({ params }) {
           <PageTitle title={`Die Gemeinsamkeiten...`} />
 
           {/** Individual Content*/}
+          <Annalena slug={slug} />
           <Angelina slug={slug} />
           <Antonia slug={slug} />
           <Sarah slug={slug} />
@@ -109,7 +112,7 @@ function LoveStoryPage({ params }) {
           {/** Generic Content, can be used for all love stories */}
           <PageTitle title={`Das große Date`} />
           <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus.</p>
-          <p>Ich habe bereits <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
+          <p>Bisher habe ich <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
             Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du?
             Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
             Du kannst die Frage mit den Buttons unten beantworten.
@@ -118,6 +121,36 @@ function LoveStoryPage({ params }) {
         </div>
       </div>
     </ScrollArea>
+  )
+}
+
+const Annalena = ({ slug }) => {
+
+  if (slug !== 'annalena') return null
+
+  return (
+    <>
+      <p>... und ja wir haben einiges gemeinsam.
+        Wenn ich nach deinem Profil gehe, dann gehst du sehr gerne reisen und warst auch schon in einigen Ländern.
+        Leider war ich noch nicht in Cancún, aber vielleicht lohnt sich nochmal ein Trip gemeinsam dort hin.
+        Reisen scheint dir auf jeden Fall sehr wichtig zu sein, und so auch mir <PlusPunkt />.
+      </p>
+
+      <p>Bevor wir aber auf die Reise gehen,
+        gebe ich dir zwei Roadtrip-Optionen, die wir gemeinsam erkunden könnten
+        (ich bin gespannt für welche du dich entscheidest):
+      </p>
+
+      <ImagePlayground imagePathLeft='/neapel.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+      <p>Zu deiner Linken: Neapel und zu deiner Rechten: Amalfi-Küste.
+        Schreib dir deine Antwort auf, darüber werden wir uns sicher beim ersten Date einig.
+      </p>
+
+      <p>Ich weiss noch nicht sehr viel über dich, aber ich denke das lässt sich relativ unkompliziert herausfinden.
+        Dir scheint auf jeden Fall auch Ästhetik sehr wichtig zu sein, zumindest sind deine Fotos echt schön.
+        Besonders auch dein Lächeln, das würde ich wirklich gerne mal mit meinen Augen genießen.
+      </p>
+    </>
   )
 }
 
