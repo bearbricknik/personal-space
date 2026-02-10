@@ -18,12 +18,21 @@ export const SideMenu = ({ children, title, isInner }) => {
   useKeyPress(onKeyPress, Object.keys(keyCodePathnameMapping))
 
   function onKeyPress(event) {
+    const active = document.activeElement
+    const isTyping = active && (
+      active.tagName === 'INPUT' ||
+      active.tagName === 'TEXTAREA' ||
+      active.tagName === 'SELECT' ||
+      active.isContentEditable
+    )
+    if (isTyping) return
+
     const key = event.code
     const targetPathname = keyCodePathnameMapping[key]
     if (targetPathname && targetPathname !== pathname) router.push(targetPathname)
   }
 
-  if (pathname.startsWith('/love-story')) return null
+  if (pathname.startsWith('/love-story') || pathname.startsWith('/post-signing')) return null
 
   return (
     <ScrollArea
