@@ -69,7 +69,7 @@ function PostSigningPage() {
               inputMode="numeric"
               autoComplete="tel"
               placeholder="e.g. +49 123 456789"
-              className="w-full"
+              className="w-full text-base"
               required
             />
             <Button type="submit" disabled={isSubmitting}>
