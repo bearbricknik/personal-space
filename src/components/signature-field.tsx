@@ -89,8 +89,19 @@ export const SignatureField = forwardRef<SignatureFieldRef, SignatureFieldProps>
       if (!point) return
       isDrawingRef.current = true
       lastPointRef.current = point
+      // Draw a dot on single click/tap (otherwise only move events draw)
+      const ctx = canvas.getContext('2d')
+      if (ctx) {
+        const dpr = typeof window !== 'undefined' ? window.devicePixelRatio ?? 1 : 1
+        const radius = 2 * dpr
+        ctx.beginPath()
+        ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI)
+        ctx.fillStyle = ctx.strokeStyle
+        ctx.fill()
+        onSignatureChange?.(false)
+      }
     },
-    []
+    [onSignatureChange]
   )
 
   const draw = useCallback(
