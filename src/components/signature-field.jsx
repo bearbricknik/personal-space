@@ -1,23 +1,16 @@
 'use client'
 
-import React, { useRef, useCallback, useEffect, useImperativeHandle, forwardRef } from 'react'
+import { useRef, useCallback, useEffect, useImperativeHandle, forwardRef } from 'react'
 import { cn } from '@/lib/utils'
 
-export type SignatureFieldRef = { clear: () => void }
-
-type Point = { x: number; y: number }
-
-function getPointFromEvent(
-  e: React.TouchEvent | React.MouseEvent | TouchEvent | MouseEvent,
-  canvas: HTMLCanvasElement
-): Point | null {
+function getPointFromEvent(e, canvas) {
   const rect = canvas.getBoundingClientRect()
   const scaleX = canvas.width / rect.width
   const scaleY = canvas.height / rect.height
-  let clientX: number
-  let clientY: number
+  let clientX
+  let clientY
   if ('touches' in e) {
-    const touch = e.touches[0] ?? (e as TouchEvent).changedTouches?.[0]
+    const touch = e.touches[0] ?? e.changedTouches?.[0]
     if (!touch) return null
     clientX = touch.clientX
     clientY = touch.clientY
@@ -31,21 +24,16 @@ function getPointFromEvent(
   }
 }
 
-type SignatureFieldProps = {
-  id?: string
-  className?: string
-  /** Called when signature is drawn or cleared; argument is true when empty */
-  // eslint-disable-next-line no-unused-vars -- callback type param for API clarity
-  onSignatureChange?: (isEmpty: boolean) => void
-  clearSignature?: boolean
-}
-
-export const SignatureField = forwardRef<SignatureFieldRef, SignatureFieldProps>(
-  function SignatureField({ id, className, onSignatureChange, clearSignature = true }, ref) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+export const SignatureField = forwardRef(function SignatureField(
+  { id, className, onSignatureChange, clearSignature = true },
+  ref
+) {
+  const canvasRef = useRef(null)
   const isDrawingRef = useRef(false)
-  const lastPointRef = useRef<Point | null>(null)
+  const lastPointRef = useRef(null)
   const hasDrawnRef = useRef(false)
+  const strokeStartRef = useRef(null)
+  const didDrawThisStrokeRef = useRef(false)
 
   const clear = useCallback(() => {
     const canvas = canvasRef.current
@@ -55,6 +43,8 @@ export const SignatureField = forwardRef<SignatureFieldRef, SignatureFieldProps>
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     lastPointRef.current = null
     hasDrawnRef.current = false
+    strokeStartRef.current = null
+    didDrawThisStrokeRef.current = false
     onSignatureChange?.(true)
   }, [onSignatureChange])
 
@@ -73,44 +63,32 @@ export const SignatureField = forwardRef<SignatureFieldRef, SignatureFieldProps>
     const h = Math.floor(rect.height * dpr)
     canvas.width = w
     canvas.height = h
-    // Draw in buffer coordinates (no ctx.scale); getPointFromEvent scales event coords to match
     ctx.strokeStyle = '#171717'
     ctx.lineWidth = 2 * dpr
     ctx.lineCap = 'round'
     ctx.lineJoin = 'round'
   }, [])
 
-  const startDrawing = useCallback(
-    (e: React.TouchEvent | React.MouseEvent) => {
-      e.preventDefault()
-      const canvas = canvasRef.current
-      if (!canvas) return
-      const point = getPointFromEvent(e, canvas)
-      if (!point) return
-      isDrawingRef.current = true
-      lastPointRef.current = point
-      // Draw a dot on single click/tap (otherwise only move events draw)
-      const ctx = canvas.getContext('2d')
-      if (ctx) {
-        const dpr = typeof window !== 'undefined' ? window.devicePixelRatio ?? 1 : 1
-        const radius = 2 * dpr
-        ctx.beginPath()
-        ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI)
-        ctx.fillStyle = ctx.strokeStyle
-        ctx.fill()
-        onSignatureChange?.(false)
-      }
-    },
-    [onSignatureChange]
-  )
+  const startDrawing = useCallback((e) => {
+    e.preventDefault()
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const point = getPointFromEvent(e, canvas)
+    if (!point) return
+    isDrawingRef.current = true
+    lastPointRef.current = point
+    strokeStartRef.current = point
+    didDrawThisStrokeRef.current = false
+  }, [])
 
   const draw = useCallback(
-    (e: React.TouchEvent | React.MouseEvent | TouchEvent | MouseEvent) => {
+    (e) => {
       if (!isDrawingRef.current) return
       const canvas = canvasRef.current
       if (!canvas) return
       const point = getPointFromEvent(e, canvas)
       if (!point) return
+      didDrawThisStrokeRef.current = true
       const ctx = canvas.getContext('2d')
       if (!ctx) return
       const last = lastPointRef.current
@@ -131,14 +109,29 @@ export const SignatureField = forwardRef<SignatureFieldRef, SignatureFieldProps>
   )
 
   const stopDrawing = useCallback(() => {
+    if (!didDrawThisStrokeRef.current && strokeStartRef.current) {
+      const canvas = canvasRef.current
+      const ctx = canvas?.getContext('2d')
+      if (ctx) {
+        const point = strokeStartRef.current
+        const dpr = typeof window !== 'undefined' ? window.devicePixelRatio ?? 1 : 1
+        const radius = 2 * dpr
+        ctx.beginPath()
+        ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI)
+        ctx.fillStyle = ctx.strokeStyle
+        ctx.fill()
+        onSignatureChange?.(false)
+      }
+    }
     isDrawingRef.current = false
     lastPointRef.current = null
-  }, [])
+    strokeStartRef.current = null
+  }, [onSignatureChange])
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const preventScroll = (e: TouchEvent) => e.preventDefault()
+    const preventScroll = (e) => e.preventDefault()
     canvas.addEventListener('touchmove', preventScroll, { passive: false })
     return () => canvas.removeEventListener('touchmove', preventScroll)
   }, [])
