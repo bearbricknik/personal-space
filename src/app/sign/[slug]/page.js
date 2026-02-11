@@ -27,7 +27,8 @@ function PostSigningPage({ params }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: `Post-signing: Telefonnummer ${phone} – Unterschrift erhalten.`,
+          message: `Post-signing: Telefonnummer ${phone} – Unterschrift erhalten von ${slug}.`,
+          slug,
         }),
       })
       const data = await res.json()

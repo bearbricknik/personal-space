@@ -32,7 +32,7 @@ export const SideMenu = ({ children, title, isInner }) => {
     if (targetPathname && targetPathname !== pathname) router.push(targetPathname)
   }
 
-  if (pathname.startsWith('/love-story') || pathname.startsWith('/post-signing')) return null
+  if (pathname.startsWith('/love-story') || pathname.startsWith('/sign')) return null
 
   return (
     <ScrollArea
