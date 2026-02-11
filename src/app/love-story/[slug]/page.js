@@ -14,7 +14,9 @@ const loveStoryParams = [
   'antonia',
   'sarah',
   'me-and-sarah',
-  'merle'
+  'merle',
+
+  'karneval'
 ]
 
 const finalPlusPoints = {
@@ -23,7 +25,8 @@ const finalPlusPoints = {
   antonia: 5,
   sarah: 5,
   'me-and-sarah': 5,
-  merle: 4
+  merle: 4,
+  karneval: 3
 }
 
 const PlusPunkt = ({ count = 1, brackets = true }) => {
@@ -44,6 +47,8 @@ function LoveStoryPage({ params }) {
 
   if (slug === 'me-and-sarah') {
     capitalizedSlug = "Sarah"
+  } else if (slug === 'karneval') {
+    capitalizedSlug = ""
   } else {
     capitalizedSlug = slug.charAt(0).toUpperCase() + slug.slice(1)
   }
@@ -76,47 +81,100 @@ function LoveStoryPage({ params }) {
           <PageTitle title={`Die etwas "andere" Bewerbung`} />
           <p>{`Schau mal ${capitalizedSlug}...`}</p>
 
-          <p>Wir wissen beide, dass ein einfaches "Hey, wie gehts?" 🖐 heutzutage einfach nicht
-            reicht und man aus der Masse der Anfragen herausstechen muss. Deswegen habe ich mir gedacht,
-            dass ich meine Bewerbung an dich auf meiner Website bereitstelle, sodass auch deine Freunde die Bewerbung
+          <p>Wir wissen beide, dass ein einfaches "Hey, wie gehts?" 🖐 einfach nicht
+            reicht und man herausstechen muss. Deswegen habe ich mir gedacht,
+            dass ich mich kurz vorstelle und dir unsere potenzielle Zukunft aufzeige, aber nicht auf dem normalen Weg, sondern über die Webseite, sodass auch deine Freunde meine Bewerbung
             lesen können (und hoffentlich approven). Ich würde sagen alleine dafür gibt es schon einen <PlusPunkt />.
           </p>
 
           <p>Kurzer Zwischenstand an gesammelten Pluspunkten: <span className="font-semibold">1</span></p>
 
-          <PageTitle title={`Wären wir nicht ein schönes Paar?`} />
-          <p>Ich gebe zu, dass ich ein bisschen verpeilt aussehe,
-            liegt vermutlich daran, dass ich einen 22 Stunden Flug hinter mir habe.
-            Aber ich bin sicher, dass wir zusammen sehr gut aussehen würden.
-            Dafür würde ich uns einen weiteren <PlusPunkt /> geben.
-            Bisher geben wir doch ein ziemlich gutes Bild zusammen ab, oder?
-          </p>
-          <ImagePlayground imagePathLeft='/dominik.jpg' imagePathRight={`/${slug}.jpg`} />
+          {slug !== 'karneval' ? (
+            <>
+              <PageTitle title={`Wären wir nicht ein schönes Paar?`} />
+              <p>Ich gebe zu, dass ich ein bisschen verpeilt aussehe,
+                liegt vermutlich daran, dass ich einen 22 Stunden Flug hinter mir habe.
+                Aber ich bin sicher, dass wir zusammen sehr gut aussehen würden.
+                Dafür würde ich uns einen weiteren <PlusPunkt /> geben.
+                Bisher geben wir doch ein ziemlich gutes Bild zusammen ab, oder?
+              </p>
+              <ImagePlayground imagePathLeft='/dominik.jpg' imagePathRight={`/${slug}.jpg`} />
 
-          <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
-            deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
-          </p>
+              <p>Na gut, wir beide wissen, dass Oberflächlichkeiten keine Rolle spielen,
+                deshalb geht es im nächsten Kapitel mehr um die Gemeinsamkeiten und inneren Werte.
+              </p>
 
-          <PageTitle title={`Die Gemeinsamkeiten...`} />
+              <PageTitle title={`Die Gemeinsamkeiten...`} />
 
-          {/** Individual Content*/}
-          <Annalena slug={slug} />
-          <Angelina slug={slug} />
-          <Antonia slug={slug} />
-          <Sarah slug={slug} />
-          <SarahStory slug={slug} />
-          <Merle slug={slug} />
+              {/** Individual Content*/}
+              <Annalena slug={slug} />
+              <Angelina slug={slug} />
+              <Antonia slug={slug} />
+              <Sarah slug={slug} />
+              <SarahStory slug={slug} />
+              <Merle slug={slug} />
 
-          <AboutMe slug={slug} />
+              <AboutMe slug={slug} />
+
+              <PageTitle title={`Das große Date`} />
+              <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus.</p>
+              <p>Bisher habe ich <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
+                Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du?
+                Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
+                Du kannst die Frage mit den Buttons unten beantworten.
+              </p>
+            </>
+          ) : null}
+
+          {slug === 'karneval' ? (
+            <>
+              <PageTitle title={`Das Schicksal hat uns zusammengeführt`} />
+              <p>
+                Wenn du das hier liest, bedeutet das vermutlich, dass irgendso ein Typ mutig genug war dich anzusprechen…
+                und du neugierig genug warst, das Einschreiben entgegenzunehmen. Ich würde sagen: solider Start für unsere gemeinsame love Story, findst du nicht? Würdig für einen weiteren <PlusPunkt />.
+              </p>
+              <p>Stell dir das mal vor — irgendwann sitzen wir mit Freunden zusammen, jemand fragt wie wir uns kennengelernt haben, und wir sagen ganz lässig:</p>
+              <p>„Ach, ganz klassisch… Karneval, ein Irrer mit einem Brief, ein Einschreiben, und eine leicht überambitionierte love story auf einer Webseite.“ Und alle denken sich: Ja klar — genau so beginnt große Liebe.</p>
+
+              <PageTitle title={`Ein kleiner Blick in unsere Zukunft`} />
+              <p>Du sagst jetzt „Ja“, wir fangen an das erste Date zu planen, und plötzlich nimmt diese Story hier richtig Fahrt auf.</p>
+              <p>Vielleicht sitzen wir bald irgendwo zusammen, quatschen viel zu lange, lachen über komplett dumme Sachen und merken irgendwann, dass wir schon wieder vergessen haben auf die Uhr zu schauen. Klingt jetzt schon super, oder?</p>
+              <p>Aus dem ersten Date, wird ein zweites. Dann philosophieren wir darüber, wann wir uns unsere erste Villa zulegen, welchen Porsche wir kaufen und wie viele Kinder wir bekommen, um eine glückliche und erfolgreiche Familie zu haben.</p>
+              <p>Wer weiß — vielleicht pushen wir uns gegenseitig, erreichen gemeinsam Dinge, wofür wir alleine nicht genug Mut gehabt hätten, planen Trips zusammen, gehen zusammen zum Sport, Reisen durch die Welt oder diskutieren darüber, was wir als Nächstes machen.</p>
+
+              <PageTitle title={`Kurze Vorstellung meinerseits`} />
+              <p>Ich heiße Dominik, ich bin 28 und
+                ich gebe mir viel zu viel Mühe, unser spontanes Date zu planen.
+                Ein paar Fakten über mich: Ich bin Softwareentwickler und Besessen von guten Designs.
+                Mir ist Sport sehr wichtig, ich gehe regelmäßig ins Gym und Joggen.
+                Ich habe viel zu viel Wissen, wenn es um das Universum geht.
+                Und ich bin ein sehr großer Pizza Liebhaber und die italienische Küche ist mir viel zu wichtig (vielleicht liegt es daran, dass ich zu 1/4 Italiener bin).
+              </p>
+
+              <p> Natürlich war das noch nicht alles,
+                ich hab natürlich noch weitere Talente wie beispielsweise:
+                Atmen, Wasser trinken, Schlafen, Laufen etc.
+                Aber wenn ich jetzt anfange, alles aufzuzählen, dann sind wir am Ende bei 200 Pluspunkten. (Humor kann ich <PlusPunkt brackets={false} />).
+                Ich will auch noch nicht alles preisgeben,
+                den Rest erfährst du dann bei unserem ersten Date.
+              </p>
+
+              <p>Eins würde mich trotzdem noch interessieren, wenn du dich für eine der beiden Optionen entscheiden könntest, welche Reise würdest du dieses Jahr noch auf dich nehmen? Darüber können wir uns beim ersten Date unterhalten (Für das Planen der ersten Reise würde ich mich selbst einfach mal einen weiteren <PlusPunkt /> geben).</p>
+              <ImagePlayground imagePathLeft='/japan.jpg' imagePathRight='/amalfi-kueste.jpeg' emojiMiddle='🤔' />
+              <p className='text-center text-sm'>Links: Tokio, Rechts: Amalfi-Küste</p>
+              <p>Kommen wir nun aber zum wichtigsten Teil: Wann sehen wir uns wieder?</p>
+
+              <PageTitle title={`Das große Date`} />
+              <p>So, fassen wir nochmal zusammen. Du warst mutig, ich war mutig. Wir beiden passen zusammen.</p>
+              <p>Bisher habe ich <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
+                Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du?
+                Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
+                Du kannst die Frage mit den Buttons unten beantworten und hoffentlich sehe ich deine Antwort, wenn du mir auf Whatsapp schreibst. Meine Nummer hast du ja 😉
+              </p>
+            </>
+          ) : null}
 
           {/** Generic Content, can be used for all love stories */}
-          <PageTitle title={`Das große Date`} />
-          <p>So, fassen wir nochmal zusammen. Wir beide Matchen. Punkt. Aus.</p>
-          <p>Bisher habe ich <span className='font-semibold'>mindestens {finalPlusPoints[slug]} Pluspunkte</span> gesammelt.
-            Ich würde fast sagen, dass das ausreicht für das erste Date, was sagst du?
-            Deshalb stell ich dir jetzt die Frage, ob du mit mir ausgehen möchtest?
-            Du kannst die Frage mit den Buttons unten beantworten.
-          </p>
           <DateSelector onAnswer={sendWebhook} />
         </div>
       </div>
