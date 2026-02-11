@@ -4,8 +4,12 @@ import { useRef, useState } from 'react'
 import { SignatureField } from '@/components/signature-field'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { NotFound } from '@/components/not-found'
 
-function PostSigningPage() {
+function PostSigningPage({ params }) {
+
+  const { slug } = params
+
   const formRef = useRef(null)
   const signatureRef = useRef(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -38,46 +42,50 @@ function PostSigningPage() {
     }
   }
 
+  if (!slug) {
+    return <NotFound />
+  }
+
   return (
     <div className="h-dvh w-full overflow-y-auto">
       <div className="mx-auto w-full px-4 py-8 sm:px-6 lg:max-w-lg">
         <form ref={formRef} className="flex flex-col gap-6" onSubmit={handleSubmit}>
-        <div>
-          <label
-            htmlFor="signature"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Unterschrift
-          </label>
-          <p className="mb-2 text-sm text-gray-500">
-            Bitte unterschreiben Sie den Erhalt des Einschreibens.
-          </p>
-          <SignatureField id="signature" ref={signatureRef} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-col gap-1">
+          <div>
             <label
-              htmlFor="phone"
+              htmlFor="signature"
               className="block text-sm font-medium text-gray-700"
             >
-              Deine Telefonnummer
+              Unterschrift von {slug} benötigt
             </label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              inputMode="numeric"
-              autoComplete="tel"
-              placeholder="e.g. +49 123 456789"
-              className="w-full text-base"
-              required
-            />
-            <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Wird gesendet…' : 'Senden'}
-            </Button>
+            <p className="mb-2 text-sm text-gray-500">
+              Bitte unterschreiben Sie den Erhalt des Einschreibens.
+            </p>
+            <SignatureField id="signature" ref={signatureRef} />
           </div>
-        </div>
-      </form>
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Deine Telefonnummer
+              </label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                placeholder="e.g. +49 123 456789"
+                className="w-full text-base"
+                required
+              />
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Wird gesendet…' : 'Senden'}
+              </Button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   )
