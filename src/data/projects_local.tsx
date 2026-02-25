@@ -3,6 +3,19 @@ export const projects = [
     {
         logs: [
             {
+                title: 'ProfitGo - Mobile App & Chrome Extension',
+                description: 'ProfitGo is a lightweight android & ios mobile app and chrome extension that analyzes products on any website giving you insights on product data and other metrics to make smarter decisions.',
+                href: 'https://profitpath.com/en/go',
+                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
+                image: {
+                    url: '/assets/profitgo_extension.png',
+                    width: 600,
+                    height: 600,
+                    title: 'ProfitGo',
+                    description: 'ProfitGo'
+                }
+            },
+            {
                 title: 'ProfitPath - A Sourcing Software',
                 description: 'A software that helps Amazon sellers to find new profitable items for their online shops. The software is built with React, NextJS and NodeJS. We analyze product feed data from hundreds of suppliers around the world and calculate profit, roi, margin and other important metrics for the sellers. We add value to the sellers by providing them with a faster solution than manual product sourcing.',
                 href: 'https://profitpath.com/en',
@@ -13,19 +26,6 @@ export const projects = [
                     height: 600,
                     title: 'ProfitPath Logo',
                     description: 'ProfitPath Logo'
-                }
-            },
-            {
-                title: 'ProfitGo - Mobile App & Chrome Extension',
-                description: 'ProfitGo is a lightweight android & ios mobile app and chrome extension that analyzes products on any website giving you insights on product data and other metrics to make smarter decisions.',
-                href: 'https://chromewebstore.google.com/detail/profitgo-for-amazon-and-o/ephoilihbddhdekcpnpkokighhcdmljb',
-                technologies: ['React', 'Webpack', 'Typescript', 'TailwindCSS', 'Chrome API'],
-                image: {
-                    url: '/assets/profitgo_extension.png',
-                    width: 600,
-                    height: 600,
-                    title: 'ProfitGo',
-                    description: 'ProfitGo'
                 }
             },
             {

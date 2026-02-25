@@ -1,12 +1,29 @@
 
 export const cvhistory = [
     {
-        year: '2025',
+        year: '2026',
         logs: [
             {
                 title: 'Still ongoing...',
                 description: 'What started as a side project has become my digital obsession. I\'m still passionately working on it, constantly adding new features, fixing bugs (and probably creating new ones), and trying to make it better every day. It\'s like raising a digital child - sometimes it behaves perfectly, other times it throws tantrums at 3 AM, but I love it unconditionally.',
             }
+        ]
+    },
+    {
+        year: '2025',
+        logs: [
+            {
+                title: 'Launch of the second product of the ProfitPath family - ProfitGo',
+                description: 'ProfitGo is a lightweight chrome extension, android & ios mobile app that analyzes products by simply visiting any website or scanning a barcode. It gives you insights on product data and other metrics to make smarter decisions.',
+                href: 'https://profitpath.com/en/go',
+                image: {
+                    url: '/assets/profitgo_extension.png',
+                    width: 600,
+                    height: 600,
+                    title: 'ProfitGo Logo',
+                    description: 'ProfitGo Logo'
+                }
+            },
         ]
     },
     {

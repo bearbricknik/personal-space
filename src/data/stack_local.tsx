@@ -151,7 +151,7 @@ export const stacks = [
                 title: 'Stripe',
                 description: 'A payment processing platform that allows you to accept payments online. Used for the ProfitPath Software to process payments & enable flexible payment options for our users.',
                 href: 'https://stripe.com/de',
-                experienceLevel: 'Intermediate',
+                experienceLevel: 'Professional',
                 image: {
                     url: '/assets/stripe.png',
                     width: 500,
@@ -164,13 +164,26 @@ export const stacks = [
                 title: 'Supabase',
                 description: 'A PostgreSQL-compatible database that is fully open-source and provides a comprehensive set of features for building modern applications.',
                 href: 'https://supabase.com/',
-                experienceLevel: 'Intermediate',
+                experienceLevel: 'Professional',
                 image: {
                     url: '/assets/supabase.png',
                     width: 500,
                     height: 500,
                     title: 'Supabase Logo',
                     description: 'Supabase Logo'
+                }
+            },
+            {
+                title: 'ORPC Client & Server',
+                description: 'ORPC is Typescript library designed to make building end-to-end typesafe APIs effortless. It seamlessly integrates with Nextjs Server Actions & tanstack query, and that is the reason we use it in our projects.',
+                href: 'https://github.com/unnoq/orpc',
+                experienceLevel: "Beginner",
+                image: {
+                    url: '/assets/orpc.png',
+                    width: 500,
+                    height: 500,
+                    title: 'ORPC Logo',
+                    description: 'ORPC Logo'
                 }
             },
             {
