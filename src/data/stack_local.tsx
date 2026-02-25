@@ -162,7 +162,7 @@ export const stacks = [
             },
             {
                 title: 'Supabase',
-                description: 'A PostgreSQL-compatible database that is fully open-source and provides a comprehensive set of features for building modern applications.',
+                description: 'A PostgreSQL-compatible database that is fully open-source and provides a comprehensive set of features for building modern applications. We use Supabase to manage our Authentication System and subscription synchronization.',
                 href: 'https://supabase.com/',
                 experienceLevel: 'Professional',
                 image: {
@@ -197,6 +197,25 @@ export const stacks = [
                     height: 500,
                     title: 'Tanstack Logo',
                     description: 'Tanstack Logo'
+                }
+            }
+        ]
+    },
+    {
+        stack: 'Authentication Systems',
+        type: 'sdk',
+        logs: [
+            {
+                title: 'Better-Auth',
+                description: 'Probably the most comprehensive authentication system for web applications. It is fully open-source and provides a comprehensive set of features for building modern Auth-Systems.',
+                href: 'https://www.better-auth.com/',
+                experienceLevel: 'Intermediate',
+                image: {
+                    url: '/assets/better-auth.png',
+                    width: 500,
+                    height: 500,
+                    title: 'Better-Auth Logo',
+                    description: 'Better-Auth Logo'
                 }
             }
         ]
